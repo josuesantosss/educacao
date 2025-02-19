@@ -51,6 +51,29 @@
             display: flex;
             justify-content: center;
         }
+        .container {
+            text-align: center;
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .button {
+            background-color: rgba(27,117,187,1);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .button-group {
+            margin-top: 20px;
+        }
+        .button-group .button {
+            display: block;
+            margin: 10px auto;
+            width: 200px;
+        }
         @media screen and (max-width: 768px) {
             .menu {
                 display: none;
@@ -89,15 +112,22 @@
     <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
     <nav id="menu" class="menu">
         <a href="index.html">Início</a>
-        <a href="anosiniciais.html">Anos Iniciais.</a>
+        <a href="anosiniciais.html">Anos Iniciais</a>
         <a href="#">Anos Finais</a>
         <a href="#">Tutoriais</a>
         <a href="#">Quem somos</a>
     </nav>
     
     <div class="container">
-        <p>Bem-vindo a página dos anos iniciais.</p>
-        <a href="#" class="button">Saiba mais</a>
+        <p>Bem-vindo à página dos anos iniciais.</p>
+        <p><strong>Escolha a turma:</strong></p>
+        <div class="button-group">
+            <a href="#" class="button">1° Ano</a>
+            <a href="#" class="button">2° Ano</a>
+            <a href="#" class="button">3° Ano</a>
+            <a href="#" class="button">4° Ano</a>
+            <a href="#" class="button">5° Ano</a>
+        </div>
     </div>
 </body>
 </html>
