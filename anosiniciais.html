@@ -38,37 +38,64 @@
         .menu a:hover {
             background-color: rgba(255,255,255,0.2);
         }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-        }
-        .button {
-            background-color: rgba(27,117,187,1);
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
             color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-            margin-top: 10px;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .menu-container {
+            display: flex;
+            justify-content: center;
+        }
+        @media screen and (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                text-align: left;
+            }
+            .menu a {
+                display: block;
+                padding: 10px;
+                border-bottom: 1px solid rgba(255,255,255,0.2);
+            }
+            .menu-toggle {
+                display: block;
+                background-color: rgba(0,0,0,0.8);
+                width: 100%;
+                text-align: left;
+            }
         }
     </style>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+    </script>
 </head>
 <body>
     <header class="header">
         <h1>Materiais Didáticos 2025</h1>
     </header>
     
-    <nav class="menu">
-        <a href="index.html">Início</a>
-        <a href="anosiniciais.html">Anos Iniciais.</a>
-        <a href="#">Anos Finais</a>
-        <a href="#">Tutoriais</a>
-        <a href="#">Quem somos</a>
+    <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+    <nav id="menu" class="menu">
+        <a href="#">Início</a>
+        <a href="#">Sobre</a>
+        <a href="#">Recursos</a>
+        <a href="#">Contato</a>
     </nav>
     
     <div class="container">
-        <p>Bem-vindo.</p>
+        <p>Bem-vindo ao site de materiais didáticos para 2025. Aqui você encontrará diversos recursos educacionais.</p>
         <a href="#" class="button">Saiba mais</a>
     </div>
 </body>
