@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Materiais Didáticos 2025</title>
     
-    <!-- Links para fontes e estilos externos -->
     <link href="https://fonts.googleapis.com/css?family=Oswald%3A400%2C600%2C700%7COpen%20Sans%3A400%2C600%2C700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:300,400,500,700&display=swap" rel="stylesheet">
     
-    <!-- Estilo reutilizado -->
     <style>
         body {
             font-family: 'Open Sans', sans-serif;
@@ -93,11 +90,11 @@
                 text-align: left;
             }
         }
-                table {
-    width: 60%;
-    border-collapse: collapse;
-    margin: auto;
-       }
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            margin: auto;
+        }
         th, td {
             border: 1px solid black;
             padding: 8px;
@@ -122,6 +119,12 @@
                 menu.style.display = "block";
             }
         }
+        function scrollToTable(tableId) {
+            var table = document.getElementById(tableId);
+            if (table) {
+                table.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
     </script>
 </head>
 <body>
@@ -142,18 +145,18 @@
         <p>Bem-vindo à página dos mateiriais do 8º ano.</p>
         <p><strong>Escolha a disciplina:</strong></p>
         <div class="button-group">
-            <a href="#" class="button">Artes</a>
-            <a href="#" class="button">Ciências</a>
-            <a href="#" class="button">Educação Física</a>
-            <a href="#" class="button">Geografia</a>
-            <a href="#" class="button">História</a>
-            <a href="#" class="button">Língua Inglesa</a>
-            <a href="#" class="button">Língua Portuguesa</a>
-            <a href="#" class="button">Matemática</a>
+            <a href="#artes" class="button" onclick="scrollToTable('artes')">Artes</a>
+            <a href="#ciencias" class="button" onclick="scrollToTable('ciencias')">Ciências</a>
+            <a href="#edfisica" class="button" onclick="scrollToTable('edfisica')">Educação Física</a>
+            <a href="#geografia" class="button" onclick="scrollToTable('geografia')">Geografia</a>
+            <a href="#historia" class="button" onclick="scrollToTable('historia')">História</a>
+            <a href="#ingles" class="button" onclick="scrollToTable('ingles')">Língua Inglesa</a>
+            <a href="#portugues" class="button" onclick="scrollToTable('portugues')">Língua Portuguesa</a>
+            <a href="#matematica" class="button" onclick="scrollToTable('matematica')">Matemática</a>
         </div>
     </div>
 
-        <table border="1">
+    <table id="artes" border="1">
     <tr>
         <th>Artes</th>
         <th>Download</th>
