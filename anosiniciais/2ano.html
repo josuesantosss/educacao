@@ -111,6 +111,27 @@
             display: block;
             margin: auto;
         }
+        .footer-image {
+            background-color: rgba(27, 117, 187, 1); /* Mesma cor de fundo do header */
+            color: rgba(255, 255, 255, 1); /* Mesma cor do texto do header */
+            display: flex; /* Usa Flexbox para criar colunas */
+            justify-content: space-between; /* Espaço entre as colunas */
+            align-items: center; /* Centraliza verticalmente */
+            padding: 40px; /* Espaçamento interno */
+            width: 100%; /* Ocupa toda a largura */
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra opcional para destacar */
+            margin-top: 40px; /* Adiciona margem superior para separar do conteúdo */
+        }
+        .footer-text {
+            text-align: left; /* Alinha o texto à esquerda */
+            flex: 1; /* Ocupa o espaço disponível */
+            padding-left: 20px; /* Espaçamento à esquerda */
+        }
+        .footer-image img {
+            max-width: 200px; /* Ajuste o tamanho da imagem conforme necessário */
+            height: auto; /* Mantém a proporção da imagem */
+            margin-right: 20px; /* Espaçamento à direita */
+        }
     </style>
     <script>
         function toggleMenu() {
@@ -130,12 +151,15 @@
     
     <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
     <nav id="menu" class="menu">
-        <a href="../index.html">Início</a>
-        <a href="../anosiniciais.html">Anos Iniciais</a>
-        <a href="../anosfinais.html">Anos Finais</a>
-        <a href="#">Tutoriais</a>
-        <a href="#">Quem somos</a>
+        <a href="index.html">Início</a>
+        <a href="anosiniciais.html">Anos Iniciais</a>
+        <a href="anosfinais.html">Anos Finais</a>
+        <a href="tutoriais.html">Tutoriais</a>
+        <a href="quemsomos.html">Quem somos</a>
     </nav>
+
+
+    <!-- CONTEÚDO DA PÁGINA -->
     
     <div class="container">
         <p>Bem-vindo à página do 2º ano.</p> 
