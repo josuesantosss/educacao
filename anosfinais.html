@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Materiais Didáticos</title>
-
-    <!-- Favicon redimensionado -->
-    <link rel="icon" type="image/png" href="https://i.ibb.co/WpNdJyLs/favico-MAP.jpg">
+    <title>Materiais Didáticos 2025</title>
     
     <!-- Links para fontes e estilos externos -->
     <link href="https://fonts.googleapis.com/css?family=Oswald%3A400%2C600%2C700%7COpen%20Sans%3A400%2C600%2C700&display=swap" rel="stylesheet">
@@ -54,6 +51,29 @@
             display: flex;
             justify-content: center;
         }
+        .container {
+            text-align: center;
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .button {
+            background-color: rgba(27,117,187,1);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .button-group {
+            margin-top: 20px;
+        }
+        .button-group .button {
+            display: block;
+            margin: 10px auto;
+            width: 200px;
+        }
         @media screen and (max-width: 768px) {
             .menu {
                 display: none;
@@ -72,24 +92,48 @@
                 text-align: left;
             }
         }
-        .important-info {
-            background-color: rgba(242, 242, 242, 1);
-            padding: 20px;
-            margin: 40px; /* Margem de 40px em todos os lados */
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                table {
+    width: 60%;
+    border-collapse: collapse;
+    margin: auto;
+       }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
         }
-        .important-info h2 {
-            color: rgba(27, 117, 187, 1);
-            font-family: 'Oswald', sans-serif;
-            margin-bottom: 15px;
+        th {
+            background-color: #f2f2f2;
         }
-        .important-info p {
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.6;
-            color: rgba(33, 33, 33, 1);
-            text-align: justify; /* Justifica o texto */
+        img {
+            width: 24px;
+            height: 24px;
+            display: block;
+            margin: auto;
         }
+        .footer-image {
+            background-color: rgba(27, 117, 187, 1); /* Mesma cor de fundo do header */
+            color: rgba(255, 255, 255, 1); /* Mesma cor do texto do header */
+            display: flex; /* Usa Flexbox para criar colunas */
+            justify-content: space-between; /* Espaço entre as colunas */
+            align-items: center; /* Centraliza verticalmente */
+            padding: 40px; /* Espaçamento interno */
+            width: 100%; /* Ocupa toda a largura */
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra opcional para destacar */
+            margin-top: 40px; /* Adiciona margem superior para separar do conteúdo */
+        }
+        .footer-text {
+            text-align: left; /* Alinha o texto à esquerda */
+            flex: 1; /* Ocupa o espaço disponível */
+            padding-left: 20px; /* Espaçamento à esquerda */
+        }
+        .footer-image img {
+            max-width: 200px; /* Ajuste o tamanho da imagem conforme necessário */
+            height: auto; /* Mantém a proporção da imagem */
+            margin-right: 20px; /* Espaçamento à direita */
+        }
+
+                }
         .footer-image {
             background-color: rgba(27, 117, 187, 1); /* Mesma cor de fundo do header */
             color: rgba(255, 255, 255, 1); /* Mesma cor do texto do header */
@@ -140,7 +184,8 @@
         <a href="quemsomos.html">Quem somos</a>
     </nav>
 
-      <!-- CONTEÚDO DA PÁGINA -->
+
+    <!-- CONTEÚDO DA PÁGINA -->
     
     <div class="container">
         <p>Bem-vindo à página dos anos finais.</p>
