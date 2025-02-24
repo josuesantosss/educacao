@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Materiais Didáticos 2025</title>
-
-    <!-- Favicon redimensionado -->
-    <link rel="icon" type="image/png" href="https://i.ibb.co/WpNdJyLs/favico-MAP.jpg">
     
     <!-- Links para fontes e estilos externos -->
     <link href="https://fonts.googleapis.com/css?family=Oswald%3A400%2C600%2C700%7COpen%20Sans%3A400%2C600%2C700&display=swap" rel="stylesheet">
@@ -54,6 +51,29 @@
             display: flex;
             justify-content: center;
         }
+        .container {
+            text-align: center;
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .button {
+            background-color: rgba(27,117,187,1);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .button-group {
+            margin-top: 20px;
+        }
+        .button-group .button {
+            display: block;
+            margin: 10px auto;
+            width: 200px;
+        }
         @media screen and (max-width: 768px) {
             .menu {
                 display: none;
@@ -72,23 +92,24 @@
                 text-align: left;
             }
         }
-        .important-info {
-            background-color: rgba(242, 242, 242, 1);
-            padding: 20px;
-            margin: 40px; /* Margem de 40px em todos os lados */
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                table {
+    width: 60%;
+    border-collapse: collapse;
+    margin: auto;
+       }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
         }
-        .important-info h2 {
-            color: rgba(27, 117, 187, 1);
-            font-family: 'Oswald', sans-serif;
-            margin-bottom: 15px;
+        th {
+            background-color: #f2f2f2;
         }
-        .important-info p {
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.6;
-            color: rgba(33, 33, 33, 1);
-            text-align: justify; /* Justifica o texto */
+        img {
+            width: 24px;
+            height: 24px;
+            display: block;
+            margin: auto;
         }
         .footer-image {
             background-color: rgba(27, 117, 187, 1); /* Mesma cor de fundo do header */
