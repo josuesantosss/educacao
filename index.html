@@ -90,19 +90,29 @@
             color: rgba(33, 33, 33, 1);
             text-align: justify; /* Justifica o texto */
         }
-        .footer-image {
-            background-color: rgba(27, 117, 187, 1); /* Mesma cor de fundo do header */
-            color: rgba(255, 255, 255, 1); /* Mesma cor do texto do header */
-            text-align: center; /* Centraliza o conteúdo */
-            padding: 50px; /* Espaçamento interno */
-            width: 100%; /* Ocupa toda a largura */
-            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra opcional para destacar */
-            margin-top: 40px; /* Adiciona margem superior para separar do conteúdo */
-        }
-        .footer-image img {
-            max-width: 300px; /* Ajuste o tamanho da imagem conforme necessário */
-            height: auto; /* Mantém a proporção da imagem */
-        }
+	.footer-image {
+    background-color: rgba(27, 117, 187, 1); /* Mesma cor de fundo do header */
+    color: rgba(255, 255, 255, 1); /* Mesma cor do texto do header */
+    display: flex; /* Usa Flexbox para criar colunas */
+    justify-content: space-between; /* Espaço entre as colunas */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 20px; /* Espaçamento interno */
+    width: 100%; /* Ocupa toda a largura */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra opcional para destacar */
+    margin-top: 40px; /* Adiciona margem superior para separar do conteúdo */
+}
+
+.footer-text {
+    text-align: left; /* Alinha o texto à esquerda */
+    flex: 1; /* Ocupa o espaço disponível */
+    padding-left: 20px; /* Espaçamento à esquerda */
+}
+
+.footer-image img {
+    max-width: 200px; /* Ajuste o tamanho da imagem conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-right: 20px; /* Espaçamento à direita */
+}
     </style>
     <script>
         function toggleMenu() {
@@ -130,18 +140,21 @@
     </nav>
     
     <div class="important-info">
-        <h2>Informações importantes</h2>
+        <h2>Quem somos</h2>
         <p>
-            Este repositório será dedicado aos materiais digitais que fazem parte do convênio firmado com o Governo do Estado de São Paulo. Nosso objetivo é centralizar e facilitar o acesso a esses materiais, garantindo que todos os envolvidos possam usufruir de informações atualizadas e de qualidade.
-        </p>
-        <p>
-            Além disso, este repositório servirá como uma plataforma colaborativa, onde os usuários poderão compartilhar feedback, sugestões e novas ideias para aprimorar continuamente os materiais disponíveis. Acreditamos que a colaboração e a troca de conhecimentos são essenciais para o sucesso deste convênio e para o desenvolvimento de soluções inovadoras que beneficiem a todos. Seja bem-vindo e aproveite ao máximo os recursos oferecidos!
-        </p>
+            Quem somos?
+
+A Secretaria Municipal de Educação de Monte Azul Paulista é responsável pela gestão das políticas educacionais no município. Coordenando uma equipe dedicada, a Secretaria implementa os planos da prefeitura voltados ao ensino, garantindo que as diretrizes nacionais e o Plano Municipal de Educação sejam seguidos. A Secretaria atua em estreita colaboração com o Prefeito, abrangendo planejamento, coordenação, supervisão e execução das políticas educacionais. Suas atividades são desenvolvidas através da Diretoria de Planejamento e Projetos e da Diretoria de Educação e Supervisão Escolar, que gerenciam as unidades escolares do município. A educação na cidade sempre foi reconhecida pela qualidade, atraindo alunos de outras localidades. A Secretaria continua a trabalhar para oferecer uma educação de excelência, promovendo o desenvolvimento integral dos estudantes e contribuindo para o progresso da comunidade.</p>
     </div>
 
-    <!-- Imagem no rodapé -->
-    <div class="footer-image">
-        <img src="https://www.monteazulpaulista.sp.gov.br/img/logo_rodape.png" alt="Logo Rodapé">
+<!-- Rodapé com duas colunas -->
+<div class="footer-image">
+    <div class="footer-text">
+        <p>Secretaria Municipal de Educação</p>
+        <p>Rua Silva Jardim, nº 59 – CEP 14730-000</p>
+        <p>Fone/Fax: (17) 3361-1095 / 3361-1365</p>
     </div>
+    <img src="https://www.monteazulpaulista.sp.gov.br/img/logo_rodape.png" alt="Logo Rodapé">
+</div>
 </body>
 </html>
