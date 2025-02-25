@@ -118,4 +118,22 @@
     line-height: 0.2; /* Espaçamento entre linhas menor */
     padding: 10px; /* Espaçamento interno para melhorar a aparência */
 }
+        .important-info {
+            background-color: rgba(242, 242, 242, 1);
+            padding: 20px;
+            margin: 40px; /* Margem de 40px em todos os lados */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .important-info h2 {
+            color: rgba(27, 117, 187, 1);
+            font-family: 'Oswald', sans-serif;
+            margin-bottom: 15px;
+        }
+        .important-info p1 {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: rgba(33, 33, 33, 1);
+            text-align: justify; /* Justifica o texto */
+        }
       
