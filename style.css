@@ -106,7 +106,7 @@
     padding: 0px; /* Espaçamento interno */
     width: 100%; /* Ocupa toda a largura */
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra opcional para destacar */
-    /* position: fixed; Fixa o rodapé na parte inferior */
+    position: static; /*  o rodapé na parte inferior */
     bottom: 0; /* Alinha o rodapé na parte inferior */
     left: 0; /* Alinha o rodapé à esquerda */
 }
