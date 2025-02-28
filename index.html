@@ -13,14 +13,14 @@
     <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:300,400,500,700&display=swap" rel="stylesheet">
     
     <script>
-function toggleMenu() {
-    var menu = document.getElementById("menu");
-    if (menu.style.display === "block") {
-        menu.style.display = "none";
-    } else {
-        menu.style.display = "block";
-    }
-}
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
     </script>
 </head>
 <body>
@@ -28,31 +28,14 @@ function toggleMenu() {
         <h1>Materiais Didáticos</h1>
     </header>
     
-<button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
-<nav id="menu" class="menu">
-    <a href="index.html">Início</a>
-    <div class="dropdown">
-        <a href="anosiniciais.html" class="dropbtn">Anos Iniciais</a>
-        <div class="dropdown-content">
-            <a href="#">1º Ano</a>
-            <a href="#">2º Ano</a>
-            <a href="#">3º Ano</a>
-            <a href="#">4º Ano</a>
-            <a href="#">5º Ano</a>
-        </div>
-    </div>
-    <div class="dropdown">
-        <a href="anosfinais.html" class="dropbtn">Anos Finais</a>
-        <div class="dropdown-content">
-            <a href="#">6º Ano</a>
-            <a href="#">7º Ano</a>
-            <a href="#">8º Ano</a>
-            <a href="#">9º Ano</a>
-        </div>
-    </div>
-    <a href="tutoriais.html">Tutoriais</a>
-    <a href="quemsomos.html">Quem somos</a>
-</nav>
+    <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+    <nav id="menu" class="menu">
+        <a href="index.html">Início</a>
+        <a href="anosiniciais.html">Anos Iniciais</a>
+        <a href="anosfinais.html">Anos Finais</a>
+        <a href="tutoriais.html">Tutoriais</a>
+        <a href="quemsomos.html">Quem somos</a>
+    </nav>
 
     <!-- CONTEÚDO DA PÁGINA -->
     
