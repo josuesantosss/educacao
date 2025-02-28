@@ -1,4 +1,4 @@
-        /* Estilos gerais */
+/* Estilos gerais */
 body {
     font-family: 'Open Sans', sans-serif;
     background-color: rgba(255, 255, 255, 1);
@@ -19,9 +19,9 @@ body {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 10px;
     text-align: center;
-    display: flex; /* Coloca os itens do menu em linha */
-    justify-content: center; /* Centraliza os itens horizontalmente */
-    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas pequenas */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .menu a {
@@ -74,44 +74,6 @@ body {
     color: white;
     cursor: pointer;
     padding: 10px;
-}
-
-/* Responsividade para dispositivos móveis */
-@media (max-width: 768px) {
-    .menu {
-        display: none; /* Oculta o menu em telas pequenas */
-        flex-direction: column; /* Empilha os itens verticalmente */
-    }
-
-    .menu.active {
-        display: flex; /* Exibe o menu quando ativo */
-    }
-
-    .menu-toggle {
-        display: block; /* Exibe o botão de toggle em telas pequenas */
-    }
-
-    .menu a {
-        display: block;
-        padding: 10px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .dropdown-content {
-        position: static; /* Remove o posicionamento absoluto para mobile */
-    }
-
-    /* Ajustes para a tabela em dispositivos móveis */
-    table {
-        width: 100%; /* Ocupa toda a largura da tela */
-        margin: 0; /* Remove a margem automática */
-        padding: 0 10px; /* Adiciona um pequeno recuo nas margens laterais */
-    }
-
-    th, td {
-        padding: 6px; /* Reduz o padding para economizar espaço */
-        font-size: 14px; /* Reduz o tamanho da fonte */
-    }
 }
 
 /* Estilos para o container */
@@ -208,4 +170,42 @@ img {
     line-height: 1.6;
     color: rgba(33, 33, 33, 1);
     text-align: justify;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu a {
+        display: block;
+        padding: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .dropdown-content {
+        position: static;
+    }
+
+    /* Ajustes para a tabela em dispositivos móveis */
+    table {
+        width: calc(100% - 20px); /* Mantém um pequeno espaçamento lateral */
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    th, td {
+        padding: 6px;
+        font-size: 14px;
+    }
 }
