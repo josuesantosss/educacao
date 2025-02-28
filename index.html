@@ -14,18 +14,13 @@
     
     <script>
 function toggleMenu() {
-    const menu = document.getElementById('menu');
-    menu.classList.toggle('active');
+    var menu = document.getElementById("menu");
+    if (menu.style.display === "block") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "block";
+    }
 }
-
-// Adiciona funcionalidade para alternar submenus em dispositivos móveis
-document.querySelectorAll('.menu-item').forEach(item => {
-    item.addEventListener('click', () => {
-        if (window.innerWidth <= 767) { // Apenas em dispositivos móveis
-            item.classList.toggle('active');
-        }
-    });
-});
     </script>
 </head>
 <body>
