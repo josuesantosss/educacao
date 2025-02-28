@@ -11,14 +11,14 @@
             text-align: center;
             padding: 20px;
         }
-	/* Estilos básicos para o menu */
+	/* Estilos gerais para o menu */
 	.menu {
 	    background-color: rgba(0, 0, 0, 0.8);
 	    padding: 10px;
 	    text-align: center;
-	    display: flex;
-	    flex-direction: column;
-	    align-items: center;
+	    display: flex; /* Coloca os itens do menu em linha */
+	    justify-content: center; /* Centraliza os itens horizontalmente */
+	    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas pequenas */
 	}
 	
 	.menu a {
@@ -35,17 +35,16 @@
 	/* Estilos para o dropdown */
 	.dropdown {
 	    position: relative;
-	    display: inline-block;
 	}
 	
 	.dropdown-content {
 	    display: none;
 	    position: absolute;
-	    background-color: rgba(0, 0, 0, 0.9); /* Fundo escuro para combinar com o menu */
+	    background-color: rgba(0, 0, 0, 0.9);
 	    min-width: 160px;
 	    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	    z-index: 1;
-	    text-align: left; /* Alinhar texto à esquerda */
+	    text-align: left;
 	}
 	
 	.dropdown-content a {
@@ -56,14 +55,14 @@
 	}
 	
 	.dropdown-content a:hover {
-	    background-color: rgba(255, 255, 255, 0.2); /* Efeito hover */
+	    background-color: rgba(255, 255, 255, 0.2);
 	}
 	
 	.dropdown:hover .dropdown-content {
 	    display: block;
 	}
 	
-	/* Estilos para o botão de toggle */
+	/* Estilos para o botão de toggle (mobile) */
 	.menu-toggle {
 	    display: none;
 	    font-size: 24px;
@@ -72,6 +71,22 @@
 	    color: white;
 	    cursor: pointer;
 	    padding: 10px;
+	}
+	
+	/* Responsividade para dispositivos móveis */
+	@media (max-width: 768px) {
+	    .menu {
+	        display: none; /* Oculta o menu em telas pequenas */
+	        flex-direction: column; /* Empilha os itens verticalmente */
+	    }
+	
+	    .menu.active {
+	        display: flex; /* Exibe o menu quando ativo */
+	    }
+	
+	    .menu-toggle {
+	        display: block; /* Exibe o botão de toggle em telas pequenas */
+	    }
 	}
 	
 	.menu-container {
