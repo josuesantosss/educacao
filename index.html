@@ -33,20 +33,12 @@ document.querySelectorAll('.menu-item').forEach(item => {
         <h1>Materiais Didáticos</h1>
     </header>
     
-    <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+<button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
 <nav id="menu" class="menu">
-    <!-- Início -->
-    <div class="menu-item">
-        <a href="index.html">Início</a>
-        <div class="submenu">
-            <a href="#">Opção 1</a>
-        </div>
-    </div>
-
-    <!-- Anos Iniciais -->
-    <div class="menu-item">
-        <a href="anosiniciais.html">Anos Iniciais</a>
-        <div class="submenu">
+    <a href="index.html">Início</a>
+    <div class="dropdown">
+        <a href="anosiniciais.html" class="dropbtn">Anos Iniciais</a>
+        <div class="dropdown-content">
             <a href="#">1º Ano</a>
             <a href="#">2º Ano</a>
             <a href="#">3º Ano</a>
@@ -54,30 +46,17 @@ document.querySelectorAll('.menu-item').forEach(item => {
             <a href="#">5º Ano</a>
         </div>
     </div>
-
-    <!-- Anos Finais -->
-    <div class="menu-item">
-        <a href="anosfinais.html">Anos Finais</a>
-        <div class="submenu">
-            <a href="#">Opção 1</a>
+    <div class="dropdown">
+        <a href="anosfinais.html" class="dropbtn">Anos Finais</a>
+        <div class="dropdown-content">
+            <a href="#">6º Ano</a>
+            <a href="#">7º Ano</a>
+            <a href="#">8º Ano</a>
+            <a href="#">9º Ano</a>
         </div>
     </div>
-
-    <!-- Tutoriais -->
-    <div class="menu-item">
-        <a href="tutoriais.html">Tutoriais</a>
-        <div class="submenu">
-            <a href="#">Opção 1</a>
-        </div>
-    </div>
-
-    <!-- Quem somos -->
-    <div class="menu-item">
-        <a href="quemsomos.html">Quem somos</a>
-        <div class="submenu">
-            <a href="#">Opção 1</a>
-        </div>
-    </div>
+    <a href="tutoriais.html">Tutoriais</a>
+    <a href="quemsomos.html">Quem somos</a>
 </nav>
 
     <!-- CONTEÚDO DA PÁGINA -->
