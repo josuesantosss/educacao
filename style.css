@@ -199,13 +199,13 @@ img {
 
     /* Ajustes para a tabela em dispositivos móveis */
     table {
-        width: calc(100% - 20px); /* Mantém um pequeno espaçamento lateral */
-        margin: 0 auto;
-        padding: 0;
+        width: 98%; /* A tabela ocupará quase toda a tela */
+        margin: 0 auto; /* Centraliza a tabela */
     }
 
     th, td {
         padding: 6px;
         font-size: 14px;
+        word-wrap: break-word; /* Evita que o texto ultrapasse a célula */
     }
 }
