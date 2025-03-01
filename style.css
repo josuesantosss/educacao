@@ -177,20 +177,26 @@ img {
     .menu {
         display: none;
         flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Ajuste conforme a altura do header */
+        left: 0;
+        z-index: 1000;
     }
 
     .menu.active {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
+        display: flex; /* Exibe o menu quando a classe 'active' é aplicada */
     }
 
     .menu a {
         display: block;
         padding: 10px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .menu-toggle {
+        display: block; /* Exibe o botão de toggle em mobile */
     }
 
     .dropdown-content {
