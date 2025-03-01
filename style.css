@@ -61,38 +61,8 @@ body {
     margin: 10px auto;
     width: 200px;
 }
-@media screen and (max-width: 768px) {
-    .menu {
-        display: none;
-        flex-direction: column;
-        text-align: left;
-    }
-    .menu a {
-        display: block;
-        padding: 10px;
-        border-bottom: 1px solid rgba(255,255,255,0.2);
-    }
-    .menu-toggle {
-        display: block;
-        background-color: rgba(0,0,0,0.8);
-        width: 100%;
-        text-align: left;
-    }
-    .container {
-        width: 95%; /* Aumenta a largura do container para dispositivos móveis */
-        padding: 10px; /* Reduz o padding para dispositivos móveis */
-    }
-    table {
-        width: 100%; /* Faz a tabela ocupar toda a largura disponível */
-        margin: 0; /* Remove a margem automática */
-    }
-    th, td {
-        padding: 6px; /* Reduz o padding das células para dispositivos móveis */
-    }
-    .download-column {
-        width: 100px; /* Fixa o tamanho da coluna "download" */
-    }
-}
+
+/* Estilo padrão da tabela */
 table {
     width: 60%;
     border-collapse: collapse;
@@ -112,14 +82,52 @@ img {
     display: block;
     margin: auto;
 }
+
+/* Ajustes para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        text-align: left;
+    }
+    .menu a {
+        display: block;
+        padding: 10px;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    .menu-toggle {
+        display: block;
+        background-color: rgba(0,0,0,0.8);
+        width: 100%;
+        text-align: left;
+    }
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+    table {
+        width: 95%; /* Faz a tabela ocupar quase toda a largura disponível */
+        margin: 0 auto; /* Remove espaçamento extra */
+    }
+    th, td {
+        padding: 6px; /* Reduz o padding para economizar espaço */
+        font-size: 14px; /* Ajusta a fonte para melhor visualização */
+    }
+    .download-column {
+        width: 100px; /* Fixa o tamanho da coluna "download" */
+    }
+}
+
+/* Rodapé */
 .footer-image {
-    background-color: rgba(27, 117, 187, 1); /* Mesma cor de fundo do header */
-    color: rgba(255, 255, 255, 1); /* Mesma cor do texto do header */
-    display: flex; /* Usa Flexbox para criar colunas */
-    align-items: center; /* Centraliza verticalmente */
-    padding: 0px; /* Espaçamento interno */
-    width: 100%; /* Ocupa toda a largura */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra opcional para destacar */
-    position: static; /*  o rodapé na parte inferior */
-    bottom: 0; /* Alinha o rodapé na parte inferior */
-    left: 0; /* Alinha o rodapé à es
+    background-color: rgba(27, 117, 187, 1);
+    color: rgba(255, 255, 255, 1);
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    position: static;
+    bottom: 0;
+    left: 0;
+}
