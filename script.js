@@ -26,17 +26,15 @@ function voltarAoTopo() {
 function ajustarBotaoParaMobile() {
     var btn = document.getElementById("topoBtn");
     if (window.innerWidth <= 768) { // Considerando 768px como o breakpoint para dispositivos móveis
-        btn.style.width = "50px";
-        btn.style.height = "50px";
-        btn.style.fontSize = "24px";
-        btn.style.bottom = "20px";
-        btn.style.right = "20px";
+        btn.style.width = "40px"; // Tamanho menor para dispositivos móveis
+        btn.style.height = "40px"; // Tamanho menor para dispositivos móveis
+        btn.style.bottom = "20px"; // Posição a partir do fundo
+        btn.style.right = "20px"; // Posição a partir da direita
     } else {
-        btn.style.width = ""; // Restaura o valor padrão
-        btn.style.height = ""; // Restaura o valor padrão
-        btn.style.fontSize = ""; // Restaura o valor padrão
-        btn.style.bottom = ""; // Restaura o valor padrão
-        btn.style.right = ""; // Restaura o valor padrão
+        btn.style.width = "50px"; // Tamanho padrão para desktop
+        btn.style.height = "50px"; // Tamanho padrão para desktop
+        btn.style.bottom = "50px"; // Posição a partir do fundo
+        btn.style.right = "50px"; // Posição a partir da direita
     }
 }
 
