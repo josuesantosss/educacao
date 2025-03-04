@@ -162,20 +162,22 @@ img {
     text-align: justify; /* Justifica o texto */
 }
 
-        /* Botão "Voltar ao Topo" visível apenas em desktops */
-        #topoBtn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            display: none; /* Escondido por padrão */
-            cursor: pointer;
-            z-index: 1000;
-        }
+#topoBtn {
+    display: none; /* Esconde o botão inicialmente */
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
 
-        @media (max-width: 768px) {
-            #topoBtn {
-                display: none !important; /* Mantém escondido em telas menores */
-            }
-        }
+#topoBtn:hover {
+    background-color: #0056b3;
+}
