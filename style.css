@@ -167,17 +167,15 @@ img {
     position: fixed;
     bottom: 50px;
     right: 50px;
-    z-index: 99;
-    border: none;
-    outline: none;
-    background-color: #007bff;
-    color: white;
+    width: 50px; /* Tamanho padrão para desktop */
+    height: 50px; /* Tamanho padrão para desktop */
     cursor: pointer;
-    padding: 15px;
-    border-radius: 50%;
-    transition: background-color 0.3s;
+    border-radius: 50%; /* Deixa o ícone redondo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar o botão */
+    transition: transform 0.3s, box-shadow 0.3s; /* Adiciona uma transição suave */
 }
 
 #topoBtn:hover {
-    background-color: #0056b3;
+    transform: scale(1.1); /* Aumenta ligeiramente o tamanho ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada ao passar o mouse */
 }
