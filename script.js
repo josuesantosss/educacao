@@ -10,7 +10,7 @@
 // Exibe o botão apenas quando a página for rolada para baixo
         window.onscroll = function() {
             var btn = document.getElementById("topoBtn");
-            if (document.documentElement.scrollTop > 900) {
+            if (document.documentElement.scrollTop > 300) {
                 btn.style.display = "block";
             } else {
                 btn.style.display = "none";
