@@ -11,15 +11,41 @@
     <!-- Links para fontes e estilos externos -->
     <link href="https://fonts.googleapis.com/css?family=Oswald%3A400%2C600%2C700%7COpen%20Sans%3A400%2C600%2C700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:300,400,500,700&display=swap" rel="stylesheet">
-    
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            if (menu.style.display === "block") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "block";
+
+    <style>
+        /* Botão "Voltar ao Topo" visível apenas em desktops */
+        #topoBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            display: none; /* Escondido por padrão */
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        @media (max-width: 768px) {
+            #topoBtn {
+                display: none !important; /* Mantém escondido em telas menores */
             }
+        }
+    </style>
+
+    <script>
+        // Exibe o botão apenas quando a página for rolada para baixo
+        window.onscroll = function() {
+            var btn = document.getElementById("topoBtn");
+            if (document.documentElement.scrollTop > 300) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+
+        // Função para voltar ao topo suavemente
+        function voltarAoTopo() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
         }
     </script>
 </head>
@@ -45,11 +71,13 @@
         <p><strong>Escolha o bimestre:</strong></p>
         <div class="button-group">
             <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-Iz_gVNgCfpw03_WhTvgFs8h7OTvzj8ZeAb0Qi5gDnBDhJOZ18k9mwW5LbJE-EHwL1gXl4ASA1XLf/pubhtml?gid=1586235937&single=true" class="button">Primeiro Bimestre</a>
-
         </div>
     </div>
 
-              <!-- Rodapé com duas colunas -->
+    <!-- Ícone de Voltar ao Topo -->
+    <img id="topoBtn" src="https://i.ibb.co/zT9G8FM1/topo.png" alt="Voltar ao topo" onclick="voltarAoTopo()">
+
+    <!-- Rodapé -->
     <div class="footer-image">
         <div class="footer-text">
             <p>Secretaria Municipal de Educação</p>
