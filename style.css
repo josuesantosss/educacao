@@ -161,3 +161,21 @@ img {
     color: rgba(33, 33, 33, 1);
     text-align: justify; /* Justifica o texto */
 }
+
+        /* Botão "Voltar ao Topo" visível apenas em desktops */
+        #topoBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            display: none; /* Escondido por padrão */
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        @media (max-width: 768px) {
+            #topoBtn {
+                display: none !important; /* Mantém escondido em telas menores */
+            }
+        }
