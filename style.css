@@ -147,6 +147,14 @@ img {
     margin: 40px; /* Margem de 40px em todos os lados */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 30%; /* Margem padrão para telas maiores */
+}
+
+/* Media query para telas menores (dispositivos móveis) */
+@media (max-width: 768px) {
+    .important-info {
+        margin: 0; /* Remove a margem nas laterais em telas menores */
+    }
 }
 
 .important-info h2 {
