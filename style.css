@@ -187,3 +187,19 @@ img {
     transform: scale(1.1); /* Aumenta ligeiramente o tamanho ao passar o mouse */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada ao passar o mouse */
 }
+
+/* Estilo responsivo para iframes */
+        .responsive-iframe {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9; /* Mantém a proporção 16:9 */
+            max-width: 560px; /* Define um tamanho máximo */
+            margin: 0 auto; /* Centraliza o vídeo */
+        }
+
+        /* Ajustes para telas menores */
+        @media (max-width: 768px) {
+            .responsive-iframe {
+                max-width: 100%; /* Ocupa toda a largura em telas menores */
+            }
+        }
