@@ -4,74 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Materiais Didáticos</title>
-    
-    <!-- Link para o arquivo CSS externo -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- Importando o script externo -->
     <script src="script.js"></script>
-    
-    <!-- Links para fontes e estilos externos -->
     <link href="https://fonts.googleapis.com/css?family=Oswald%3A400%2C600%2C700%7COpen%20Sans%3A400%2C600%2C700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:300,400,500,700&display=swap" rel="stylesheet">
-    
 </head>
 <body>
     <header class="header">
         <h1>Materiais Didáticos</h1>
     </header>
-    
+
     <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
-    <nav id="menu" class="menu">
-        <a href="index.html">Início</a>
-        <div class="dropdown">
-            <a href="anosiniciais.html">Anos Iniciais</a>
-            <div class="dropdown-content">
-                <a href="#">1º Ano</a>
-                <a href="#">2º Ano</a>
-                <a href="#">3º Ano</a>
-                <a href="#">4º Ano</a>
-                <a href="#">5º Ano</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <a href="anosfinais.html">Anos Finais</a>
-            <div class="dropdown-content">
-                <a href="#">6º Ano</a>
-                <a href="#">7º Ano</a>
-                <a href="#">8º Ano</a>
-                <a href="#">9º Ano</a>
-            </div>
-        </div>
-        <a href="tutoriais.html">Tutoriais</a>
-        <a href="quemsomos.html">Quem somos</a>
-    </nav>
-    <br>
-    <br>
+    <div id="menu-container"></div>
+    <br><br>
 
-    <!-- CONTEÚDO DA PÁGINA -->
-    
-<div class="important-info">
-    <h2>Informações importantes</h2>
-    <p>
-        Este repositório será dedicado aos materiais digitais que fazem parte do convênio firmado com o Governo do Estado de São Paulo. Nosso objetivo é centralizar e facilitar o acesso a esses materiais, garantindo que todos os envolvidos possam usufruir de informações atualizadas e de qualidade.
-    </p>
-    <p>
-        Além disso, este repositório servirá como uma plataforma colaborativa, onde os usuários poderão compartilhar feedback, sugestões e novas ideias para aprimorar continuamente os materiais disponíveis. Acreditamos que a colaboração e a troca de conhecimentos são essenciais para o sucesso deste convênio e para o desenvolvimento de soluções inovadoras que beneficiem a todos. Seja bem-vindo e aproveite ao máximo os recursos oferecidos!
-    </p>
-</div>
+    <div class="important-info">
+        <h2>Informações importantes</h2>
+        <p>
+            Este repositório será dedicado aos materiais digitais que fazem parte do convênio firmado com o Governo do Estado de São Paulo. Nosso objetivo é centralizar e facilitar o acesso a esses materiais, garantindo que todos os envolvidos possam usufruir de informações atualizadas e de qualidade.
+        </p>
+        <p>
+            Além disso, este repositório servirá como uma plataforma colaborativa, onde os usuários poderão compartilhar feedback, sugestões e novas ideias para aprimorar continuamente os materiais disponíveis. Acreditamos que a colaboração e a troca de conhecimentos são essenciais para o sucesso deste convênio e para o desenvolvimento de soluções inovadoras que beneficiem a todos. Seja bem-vindo e aproveite ao máximo os recursos oferecidos!
+        </p>
     </div>
-        <br>
-            <br>
-                <br>
+    <br><br><br>
 
-      <!-- Rodapé com duas colunas -->
     <div class="footer-image">
         <div class="footer-text">
             <p>Secretaria Municipal de Educação</p>
             <p>Rua Silva Jardim, nº 59 – CEP 14730-000</p>
             <p>Fone/Fax: (17) 3361-1095 / 3361-1365</p>
         </div>
-   </div>
+    </div>
+    <script src="menu-loader.js"></script>
 </body>
 </html>
