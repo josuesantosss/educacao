@@ -8,6 +8,11 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden; /* Evita overflow horizontal */
+}
+
+* {
+    box-sizing: border-box; /* Garante que padding e borda não aumentem a largura */
 }
 
 /* Cabeçalho */
@@ -53,8 +58,8 @@ body {
 
 /* Conteúdo Principal */
 .container {
-    text-align: center;
-    width: 80%;
+    width: 100%;
+    max-width: 1200px; /* Limita a largura máxima */
     margin: auto;
     padding: 20px;
 }
@@ -82,7 +87,7 @@ body {
 
 /* Tabelas */
 table {
-    width: 60%;
+    width: 100%;
     border-collapse: collapse;
     margin: auto;
 }
@@ -98,8 +103,8 @@ th {
 }
 
 img {
-    width: 24px;
-    height: 24px;
+    max-width: 100%;
+    height: auto;
     display: block;
     margin: auto;
 }
@@ -212,7 +217,7 @@ img {
         display: none;
         flex-direction: column;
         text-align: left;
-        width: 50%;
+        width: 100%; /* Menu ocupa toda a largura */
         background-color: rgba(0, 0, 0, 0.8);
     }
 
@@ -227,7 +232,7 @@ img {
     .menu-toggle {
         display: block;
         background-color: rgba(0, 0, 0, 0.8);
-        width: 30%;
+        width: 100%;
         text-align: left;
     }
 
@@ -252,8 +257,9 @@ img {
 
     /* Tabelas Mobile */
     table {
-        width: 95%;
-        margin: 0 auto;
+        width: 100%;
+        overflow-x: auto; /* Permite rolagem horizontal em tabelas */
+        display: block;
     }
 
     th, td {
@@ -272,7 +278,7 @@ img {
 
     /* Área de Texto Importante Mobile */
     .important-info {
-        margin: 0;
+        margin: 10px;
         padding: 15px; /* Reduz o padding para melhor visualização */
     }
 
