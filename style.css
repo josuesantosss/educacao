@@ -1,4 +1,4 @@
-/* Estilos Globais */
+Esse CSS para mobile deixa a página mais larga que a tela do gadget /* Estilos Globais */
 body {
     font-family: 'Open Sans', sans-serif;
     background-color: rgba(255, 255, 255, 1);
@@ -8,11 +8,6 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    overflow-x: hidden; /* Evita overflow horizontal */
-}
-
-* {
-    box-sizing: border-box; /* Garante que padding e borda não aumentem a largura */
 }
 
 /* Cabeçalho */
@@ -58,8 +53,8 @@ body {
 
 /* Conteúdo Principal */
 .container {
-    width: 100%;
-    max-width: 1200px; /* Limita a largura máxima */
+    text-align: center;
+    width: 80%;
     margin: auto;
     padding: 20px;
 }
@@ -87,7 +82,7 @@ body {
 
 /* Tabelas */
 table {
-    width: 100%;
+    width: 60%;
     border-collapse: collapse;
     margin: auto;
 }
@@ -103,8 +98,8 @@ th {
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+    width: 24px;
+    height: 24px;
     display: block;
     margin: auto;
 }
@@ -217,7 +212,7 @@ img {
         display: none;
         flex-direction: column;
         text-align: left;
-        width: 100%; /* Menu ocupa toda a largura */
+        width: 50%;
         background-color: rgba(0, 0, 0, 0.8);
     }
 
@@ -232,7 +227,7 @@ img {
     .menu-toggle {
         display: block;
         background-color: rgba(0, 0, 0, 0.8);
-        width: 100%;
+        width: 20%; /* mudei aqui */
         text-align: left;
     }
 
@@ -257,9 +252,8 @@ img {
 
     /* Tabelas Mobile */
     table {
-        width: 100%;
-        overflow-x: auto; /* Permite rolagem horizontal em tabelas */
-        display: block;
+        width: 95%;
+        margin: 0 auto;
     }
 
     th, td {
@@ -278,7 +272,7 @@ img {
 
     /* Área de Texto Importante Mobile */
     .important-info {
-        margin: 10px;
+        margin: 0;
         padding: 15px; /* Reduz o padding para melhor visualização */
     }
 
