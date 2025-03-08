@@ -227,14 +227,14 @@ img {
     .menu-toggle {
         display: block;
         background-color: rgba(0, 0, 0, 0.8);
-        width: 20%; /* mudei aqui */
+        width: 30%; 
         text-align: left;
     }
 
     /* Submenus Mobile */
     .dropdown-content {
         position: absolute;
-        left: 100%;
+        left: 90%; /* mudei aqui */
         top: 0;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         background-color: rgba(0, 0, 0, 0.8);
