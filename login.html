@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <form id="loginForm">
+        <label for="username">Nome de usuário:</label>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password"><br><br>
+        <button type="button" onclick="authenticate()">Entrar</button>
+    </form>
+    <div id="message"></div>
+    <script>
+        function authenticate() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const messageDiv = document.getElementById('message');
+
+            //Simulação de usuarios e senhas (NUNCA faça isso em produção!)
+            const usuarios = {
+                "usuario1": "senha1",
+                "usuario3": "senha3",
+                "usuario2": "senha2"
+            };
+
+            if (usuarios[username] && usuarios[username] === password) {
+                messageDiv.textContent = 'Login bem-sucedido!';
+                // Redirecionar para a página protegida
+                window.location.href = "paginaProtegida.html";
+            } else {
+                messageDiv.textContent = 'Nome de usuário ou senha incorretos.';
+            }
+        }
+    </script>
+</body>
+</html>
