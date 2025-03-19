@@ -70,6 +70,10 @@ body {
     margin-top: 10px;
 }
 
+.button:active, .button.active { /* Adicionado para mudar a cor ao clicar ou quando a classe "active" é aplicada */
+    background-color: green;
+}
+
 .button-group {
     margin-top: 20px;
 }
@@ -227,7 +231,7 @@ img {
     .menu-toggle {
         display: block;
         background-color: rgba(0, 0, 0, 0.8);
-        width: 30%; 
+        width: 30%;
         text-align: left;
     }
 
@@ -261,31 +265,4 @@ img {
         font-size: 14px;
     }
 
-    .download-column {
-        width: 100px;
-    }
-
-    /* Rodapé Mobile */
-    .footer-image {
-        padding: 10px; /* Adiciona padding para melhor visualização */
-    }
-
-    /* Área de Texto Importante Mobile */
-    .important-info {
-        margin: 0;
-        padding: 15px; /* Reduz o padding para melhor visualização */
-    }
-
-    /* Iframes Responsivos Mobile */
-    .responsive-iframe {
-        max-width: 100%;
-    }
-
-    /* Botão Topo Mobile */
-    #topoBtn {
-        bottom: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
-    }
-}
+    .download-
