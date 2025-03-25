@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoriais de Atalhos do Windows</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oswald%3A400%2C600%2C700%7COpen%20Sans%3A400%2C600%2C700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <style>
+        .container {
+            display: flex;
+        }
+        .button-group {
+            width: 25%;
+            padding-right: 20px;
+        }
+        .important-info {
+            width: 75%;
+            background-color: rgba(242, 242, 242, 1);
+            padding: 20px;
+            margin: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .important-info img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            width: 14cm;
+            height: 7cm;
+        }
+        .hidden {
+            display: none;
+        }
+        .button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <script src="menu-loader.js"></script>
+
+    <header class="header">
+        <h1>Atalhos do Windows</h1>
+    </header>
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+    <div id="menu-container"></div>
+    <br><br>
+
+    <div class="container">
+        <div class="button-group">
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('Ctrl + C')">Copiar</button>
+                <p id="descricaoAtalho-Ctrl + C" class="hidden">Copia o conteúdo selecionado.</p>
+                <img id="imagemExibida-Ctrl + C" src="atalhos/ctrlC.png" alt="" class="hidden">
+            </div>
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('Ctrl + V')">Colar</button>
+                <p id="descricaoAtalho-Ctrl + V" class="hidden">Cola o conteúdo que foi Copiado.</p>
+                <img id="imagemExibida-Ctrl + V" src="atalhos/ctrlV.png" alt="" class="hidden">
+            </div>
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('Ctrl + X')">Recortar</button>
+                <p id="descricaoAtalho-Ctrl + X" class="hidden">Recorta o conteúdo selecionado.</p>
+                <img id="imagemExibida-Ctrl + X" src="atalhos/ctrlX.png" alt="" class="hidden">
+            </div>
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('Ctrl + Z')">Desfazer</button>
+                <p id="descricaoAtalho-Ctrl + Z" class="hidden">Desfaz a última ação.</p>
+                <img id="imagemExibida-Ctrl + Z" src="atalhos/ctrlZ.png" alt="" class="hidden">
+            </div>
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('Win + P')">Projeção</button>
+                <p id="descricaoAtalho-Win + P" class="hidden">Abre as opções de projeção para conectar a um projetor ou segunda tela [Duplicar, extender].</p>
+                <img id="imagemExibida-Win + P" src="atalhos/winP.png" alt="" class="hidden">
+            </div>
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('Win')">Menu Iniciar</button>
+                <p id="descricaoAtalho-Win" class="hidden">Abre o Menu Iniciar.</p>
+                <img id="imagemExibida-Win" src="atalhos/win.png" alt="" class="hidden">
+            </div>
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('PrtScn')">Captura de Tela</button>
+                <p id="descricaoAtalho-PrtScn" class="hidden">Captura a tela inteira e copia para a área de transferência [Dica: cole em um documento Word].</p>
+                <img id="imagemExibida-PrtScn" src="atalhos/print.png" alt="" class="hidden">
+            </div>
+        </div>
+    </div>
+
+        <div class="footer-image">
+        <div class="footer-text">
+            <p>Secretaria Municipal de Educação</p>
+            <p>Rua Silva Jardim, nº 59 – CEP 14730-000</p>
+            <p>Fone/Fax: (17) 3361-1095 / 3361-1365</p>
+        </div>
+    </div>
+
+    <script>
+        function mostrarImagem(atalho) {
+            const botoes = ['Ctrl + C', 'Ctrl + V', 'Ctrl + X', 'Ctrl + Z', 'Win + P', 'Win', 'PrtScn'];
+
+            botoes.forEach(botao => {
+                const descricao = document.getElementById(`descricaoAtalho-${botao}`);
+                const imagem = document.getElementById(`imagemExibida-${botao}`);
+
+                if (botao === atalho) {
+                    descricao.classList.remove('hidden');
+                    imagem.classList.remove('hidden');
+                } else {
+                    descricao.classList.add('hidden');
+                    imagem.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
