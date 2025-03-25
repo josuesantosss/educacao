@@ -3,11 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Materiais Didáticos</title>
+    <title>Tutoriais Atalhos do Windows</title>
     <link rel="stylesheet" href="../style.css">
     <script src="../script.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Oswald%3A400%2C600%2C700%7COpen%20Sans%3A400%2C600%2C700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <style>
+        .atalho-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .atalho-tecla {
+            flex: 1;
+            padding-right: 20px;
+            text-align: left;
+        }
+        .atalho-imagem {
+            flex: 1;
+            text-align: right;
+        }
+        .atalho-imagem img {
+            max-width: 150px;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -16,42 +37,62 @@
 
     <div class="container">
         <h2>Atalhos Importantes do Windows</h2>
-        <div class="button-group">
-            <button class="button" onclick="mostrarTutorial('Ctrl + C')">Ctrl + C: Copiar</button>
-            <button class="button" onclick="mostrarTutorial('Ctrl + V')">Ctrl + V: Colar</button>
-            <button class="button" onclick="mostrarTutorial('Ctrl + X')">Ctrl + X: Recortar</button>
-            <button class="button" onclick="mostrarTutorial('Ctrl + Z')">Ctrl + Z: Desfazer</button>
-            <button class="button" onclick="mostrarTutorial('Alt + Tab')">Alt + Tab: Alternar Janelas</button>
-            <button class="button" onclick="mostrarTutorial('Win + P')">Win + P: Projeção</button>
-            <button class="button" onclick="mostrarTutorial('Win')">Win: Menu Iniciar</button>
-            <button class="button" onclick="mostrarTutorial('Win + I')">Win + I: Configurações</button>
-            <button class="button" onclick="mostrarTutorial('Win + E')">Win + E: Explorador de Arquivos</button>
-            <button class="button" onclick="mostrarTutorial('Win + A')">Win + A: Central de Ações</button>
-            <button class="button" onclick="mostrarTutorial('PrtScn')">PrtScn: Captura de Tela</button>
-        </div>
-        <div id="tutorial-container" style="margin-top: 20px;"></div>
-    </div>
 
-    <script>
-        function mostrarTutorial(atalho) {
-            let descricao = "";
-            switch (atalho) {
-                case 'Ctrl + C': descricao = "Copia o texto ou item selecionado."; break;
-                case 'Ctrl + V': descricao = "Cola o texto ou item copiado/recortado."; break;
-                case 'Ctrl + X': descricao = "Recorta o texto ou item selecionado."; break;
-                case 'Ctrl + Z': descricao = "Desfaz a última ação realizada."; break;
-                case 'Alt + Tab': descricao = "Alterna entre as janelas abertas."; break;
-                case 'Win + P': descricao = "Abre o menu de projeção de tela do Windows."; break;
-                case 'Win': descricao = "Abre o menu Iniciar do Windows."; break;
-                case 'Win + I': descricao = "Abre as configurações do sistema Windows."; break;
-                case 'Win + E': descricao = "Abre o Explorador de Arquivos do Windows."; break;
-                case 'Win + A': descricao = "Abre a Central de Ações do Windows."; break;
-                case 'PrtScn': descricao = "Salva uma captura de tela na área de transferência."; break;
-                default: descricao = "Tutorial não disponível.";
-            }
-            document.getElementById('tutorial-container').innerHTML = `<p>${atalho}: ${descricao}</p>`;
-        }
-    </script>
+        <div class="atalho-container">
+            <div class="atalho-tecla">Ctrl + C: Copiar</div>
+            <div class="atalho-imagem"><img src="https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg" alt="Ctrl + C"></div>
+        </div>
+
+        <div class="atalho-container">
+            <div class="atalho-tecla">Ctrl + V: Colar</div>
+            <div class="atalho-imagem"><img src="https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg" alt="Ctrl + V"></div>
+        </div>
+
+        <div class="atalho-container">
+            <div class="atalho-tecla">Ctrl + X: Recortar</div>
+            <div class="atalho-imagem"><img src="https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg" alt="Ctrl + X"></div>
+        </div>
+
+        <div class="atalho-container">
+            <div class="atalho-tecla">Ctrl + Z: Desfazer</div>
+            <div class="atalho-imagem"><img src="https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg" alt="Ctrl + Z"></div>
+        </div>
+
+        <div class="atalho-container">
+            <div class="atalho-tecla">Alt + Tab: Alternar Janelas</div>
+            <div class="atalho-imagem"><img src="https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg" alt="Alt + Tab"></div>
+        </div>
+
+        <div class="atalho-container">
+            <div class="atalho-tecla">Win + P: Projeção</div>
+            <div class="atalho-imagem"><img src="https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg" alt="Win + P"></div>
+        </div>
+
+        <div class="atalho-container">
+            <div class="atalho-tecla">Win: Menu Iniciar</div>
+            <div class="atalho-imagem"><img src="https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg" alt="Win"></div>
+        </div>
+
+        <div class="atalho-container">
+            <div class="atalho-tecla">Win + I: Configurações</div>
+            <div class="atalho-imagem"><img src="https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg" alt="Win + I"></div>
+        </div>
+
+        <div class="atalho-container">
+            <div class="atalho-tecla">Win + E: Explorador de Arquivos</div>
+            <div class="atalho-imagem"><img src="https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg" alt="Win + E"></div>
+        </div>
+
+        <div class="atalho-container">
+            <div class="atalho-tecla">Win + A: Central de Ações</div>
+            <div class="atalho-imagem"><img src="https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg" alt="Win + A"></div>
+        </div>
+
+        <div class="atalho-container">
+            <div class="atalho-tecla">PrtScn: Captura de Tela</div>
+            <div class="atalho-imagem"><img src="https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg" alt="PrtScn"></div>
+        </div>
+    </div>
 
     <div class="footer-image">
         <div class="footer-text">
