@@ -11,15 +11,15 @@
         .container {
             display: flex;
         }
-        .atalhos-esquerda {
+        .button-group {
             width: 25%;
             padding-right: 20px;
         }
         .atalho-container {
             margin-bottom: 10px;
         }
-      /*  .important-info {
-            width: 75%;
+        .important-info {
+            width: 75%; /* Garante que o div ocupa 75% da largura restante */
             background-color: rgba(242, 242, 242, 1);
             padding: 20px;
             margin: 40px;
@@ -28,16 +28,30 @@
             display: flex;
             justify-content: center;
             align-items: center;
-        } */
+        }
         .important-info img {
-            max-width: 100%; /* Garante que a imagem preencha a largura da div */
-            max-height: 100%; /* Garante que a imagem preencha a altura da div */
-            object-fit: contain; /* Mantém as proporções da imagem */
-            width: 14cm; /* Largura da imagem */
-            height: 7cm; /* Altura da imagem */
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            width: 14cm;
+            height: 7cm;
         }
         .hidden {
             display: none;
+        }
+        .button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -47,16 +61,15 @@
     </header>
 
     <div class="container">
-    <div class="button-group">
-        <button class="button" onclick="mostrarImagem('Ctrl + C')">Copiar</button>
-        <button class="button" onclick="mostrarImagem('Ctrl + V')">Colar</button>
-        <button class="button" onclick="mostrarImagem('Ctrl + X')">Recortar</button>
-        <button class="button" onclick="mostrarImagem('Ctrl + Z')">Desfazer</button>
-        <button class="button" onclick="mostrarImagem('Win + P')">Projeção</button>
-        <button class="button" onclick="mostrarImagem('Win')">Menu Iniciar</button>
-        <button class="button" onclick="mostrarImagem('PrtScn')">Captura de Tela</button>
-    </div>
-</div>
+        <div class="button-group">
+            <button class="button" onclick="mostrarImagem('Ctrl + C')">Copiar</button>
+            <button class="button" onclick="mostrarImagem('Ctrl + V')">Colar</button>
+            <button class="button" onclick="mostrarImagem('Ctrl + X')">Recortar</button>
+            <button class="button" onclick="mostrarImagem('Ctrl + Z')">Desfazer</button>
+            <button class="button" onclick="mostrarImagem('Win + P')">Projeção</button>
+            <button class="button" onclick="mostrarImagem('Win')">Menu Iniciar</button>
+            <button class="button" onclick="mostrarImagem('PrtScn')">Captura de Tela</button>
+        </div>
         <div class="important-info">
             <img id="imagemExibida" src="" alt="" class="hidden">
         </div>
@@ -65,7 +78,7 @@
     <script>
         function mostrarImagem(atalho) {
             const imagens = {
-                'Ctrl + C': 'atalhos/ctrlC.png', // Caminho ajustado para a imagem local
+                'Ctrl + C': 'atalhos/ctrlC.png',
                 'Ctrl + V': 'atalhos/ctrlV.png',
                 'Ctrl + X': 'atalhos/ctrlX.png',
                 'Ctrl + Z': 'atalhos/ctrlZ.png',
