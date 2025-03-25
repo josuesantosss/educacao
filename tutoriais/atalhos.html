@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoriais de Atalhos do Windows</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald%3A400%2C600%2C700%7COpen%20Sans%3A400%2C600%2C700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:300,400,500,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1>Tutoriais de Atalhos do Windows</h1>
+    </header>
+
+    <div class="container">
+        <h2>Atalhos Importantes do Windows</h2>
+        <div class="button-group">
+            <button class="button" onclick="mostrarTutorial('Ctrl + C')">Ctrl + C: Copiar</button>
+            <button class="button" onclick="mostrarTutorial('Ctrl + V')">Ctrl + V: Colar</button>
+            <button class="button" onclick="mostrarTutorial('Ctrl + X')">Ctrl + X: Recortar</button>
+            <button class="button" onclick="mostrarTutorial('Ctrl + Z')">Ctrl + Z: Desfazer</button>
+            <button class="button" onclick="mostrarTutorial('Alt + Tab')">Alt + Tab: Alternar Janelas</button>
+            <button class="button" onclick="mostrarTutorial('Win + P')">Win + P: Projeção</button>
+            <button class="button" onclick="mostrarTutorial('Win')">Win: Menu Iniciar</button>
+            <button class="button" onclick="mostrarTutorial('Win + I')">Win + I: Configurações</button>
+            <button class="button" onclick="mostrarTutorial('Win + E')">Win + E: Explorador de Arquivos</button>
+            <button class="button" onclick="mostrarTutorial('Win + A')">Win + A: Central de Ações</button>
+            <button class="button" onclick="mostrarTutorial('PrtScn')">PrtScn: Captura de Tela</button>
+        </div>
+        <div id="tutorial-container" style="margin-top: 20px;"></div>
+    </div>
+
+    <script>
+        function mostrarTutorial(atalho) {
+            let descricao = "";
+            switch (atalho) {
+                case 'Ctrl + C': descricao = "Copia o texto ou item selecionado."; break;
+                case 'Ctrl + V': descricao = "Cola o texto ou item copiado/recortado."; break;
+                case 'Ctrl + X': descricao = "Recorta o texto ou item selecionado."; break;
+                case 'Ctrl + Z': descricao = "Desfaz a última ação realizada."; break;
+                case 'Alt + Tab': descricao = "Alterna entre as janelas abertas."; break;
+                case 'Win + P': descricao = "Abre o menu de projeção de tela do Windows."; break;
+                case 'Win': descricao = "Abre o menu Iniciar do Windows."; break;
+                case 'Win + I': descricao = "Abre as configurações do sistema Windows."; break;
+                case 'Win + E': descricao = "Abre o Explorador de Arquivos do Windows."; break;
+                case 'Win + A': descricao = "Abre a Central de Ações do Windows."; break;
+                case 'PrtScn': descricao = "Salva uma captura de tela na área de transferência."; break;
+                default: descricao = "Tutorial não disponível.";
+            }
+            document.getElementById('tutorial-container').innerHTML = `<p>${atalho}: ${descricao}</p>`;
+        }
+    </script>
+
+    <div class="footer-image">
+        <div class="footer-text">
+            <p>Secretaria Municipal de Educação</p>
+            <p>Rua Silva Jardim, nº 59 – CEP 14730-000</p>
+            <p>Fone/Fax: (17) 3361-1095 / 3361-1365</p>
+        </div>
+    </div>
+</body>
+</html>
