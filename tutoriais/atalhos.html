@@ -19,15 +19,16 @@
             margin-bottom: 10px;
         }
         .important-info {
-            width: 75%; /* Garante que o div ocupa 75% da largura restante */
+            width: 75%;
             background-color: rgba(242, 242, 242, 1);
             padding: 20px;
             margin: 40px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column; /* Organiza a descrição e a imagem em coluna */
+            align-items: center; /* Centraliza horizontalmente */
+            text-align: center; /* Centraliza o texto */
         }
         .important-info img {
             max-width: 100%;
@@ -71,6 +72,7 @@
             <button class="button" onclick="mostrarImagem('PrtScn')">Captura de Tela</button>
         </div>
         <div class="important-info">
+            <p id="descricaoAtalho" class="hidden"></p>
             <img id="imagemExibida" src="" alt="" class="hidden">
         </div>
     </div>
@@ -78,24 +80,48 @@
     <script>
         function mostrarImagem(atalho) {
             const imagens = {
-                'Ctrl + C': 'atalhos/ctrlC.png',
-                'Ctrl + V': 'atalhos/ctrlV.png',
-                'Ctrl + X': 'atalhos/ctrlX.png',
-                'Ctrl + Z': 'atalhos/ctrlZ.png',
-                'Alt + Tab': 'atalhos/alttab.png',
-                'Win + P': 'atalhos/winP.png',
-                'Win': 'atalhos/win.png',
-                'PrtScn': 'atalhos/print.png',
+                'Ctrl + C': {
+                    src: 'atalhos/ctrlC.png',
+                    descricao: 'Copia o conteúdo selecionado.'
+                },
+                'Ctrl + V': {
+                    src: 'atalhos/ctrlV.png',
+                    descricao: 'Cola o conteúdo que foi Copiado.'
+                },
+                'Ctrl + X': {
+                    src: 'atalhos/ctrlX.png',
+                    descricao: 'Recorta o conteúdo selecionado.'
+                },
+                'Ctrl + Z': {
+                    src: 'atalhos/ctrlZ.png',
+                    descricao: 'Desfaz a última ação.'
+                },
+                'Win + P': {
+                    src: 'atalhos/winP.png',
+                    descricao: 'Abre as opções de projeção para conectar a um projetor ou segunda tela [Duplicar, extender].'
+                },
+                'Win': {
+                    src: 'atalhos/win.png',
+                    descricao: 'Abre o Menu Iniciar.'
+                },
+                'PrtScn': {
+                    src: 'atalhos/print.png',
+                    descricao: 'Captura a tela inteira e copia para a área de transferência [Dica: cole em um documento Word].'
+                },
             };
 
-            const imagemSrc = imagens[atalho];
+            const imagemInfo = imagens[atalho];
             const imagemExibida = document.getElementById('imagemExibida');
+            const descricaoAtalho = document.getElementById('descricaoAtalho');
 
-            if (imagemSrc) {
-                imagemExibida.src = imagemSrc;
+            if (imagemInfo) {
+                imagemExibida.src = imagemInfo.src;
                 imagemExibida.classList.remove('hidden');
+                descricaoAtalho.textContent = imagemInfo.descricao;
+                descricaoAtalho.classList.remove('hidden');
             } else {
                 imagemExibida.classList.add('hidden');
+                descricaoAtalho.classList.add('hidden');
             }
         }
     </script>
