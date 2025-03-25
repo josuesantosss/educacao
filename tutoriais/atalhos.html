@@ -27,9 +27,9 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: flex;
-            flex-direction: column; /* Organiza a descrição e a imagem em coluna */
-            align-items: center; /* Centraliza horizontalmente */
-            text-align: center; /* Centraliza o texto */
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
         .important-info img {
             max-width: 100%;
@@ -85,7 +85,6 @@
         </div>
     </div>
 
-        <!-- RODAPÉ -->
         <div class="footer-image">
         <div class="footer-text">
             <p>Secretaria Municipal de Educação</p>
@@ -93,8 +92,6 @@
             <p>Fone/Fax: (17) 3361-1095 / 3361-1365</p>
         </div>
     </div>
-</body>
-</html>
 
     <script>
         function mostrarImagem(atalho) {
@@ -127,6 +124,10 @@
                     src: 'atalhos/print.png',
                     descricao: 'Captura a tela inteira e copia para a área de transferência [Dica: cole em um documento Word].'
                 },
+                'aviso': {
+                    src: 'atalhos/aviso.png',
+                    descricao: 'Imagem de aviso inicial.'
+                }
             };
 
             const imagemInfo = imagens[atalho];
@@ -143,6 +144,10 @@
                 descricaoAtalho.classList.add('hidden');
             }
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            mostrarImagem('aviso'); // Exibe a imagem aviso.png ao carregar a página
+        });
     </script>
 
 </body>
