@@ -8,38 +8,40 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald%3A400%2C600%2C700%7COpen%20Sans%3A400%2C600%2C700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:300,400,500,700&display=swap" rel="stylesheet">
     <style>
-        .atalho-container {
+        .container {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
         }
-        .atalho-tecla {
+        .atalhos-esquerda {
             flex: 1;
             padding-right: 20px;
-            text-align: left;
+        }
+        .atalho-container {
+            margin-bottom: 20px;
         }
         .atalho-imagem {
-            flex: 1;
-            text-align: center; /* Centraliza a imagem */
+            text-align: center;
         }
         .atalho-imagem img {
-            max-width: 150px;
+            max-width: 100%;
             height: auto;
         }
-        .atalho-imagem img.hidden{
+        .important-info {
+            background-color: rgba(242, 242, 242, 1);
+            padding: 20px;
+            margin: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .important-info img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+        .hidden {
             display: none;
         }
-       /*  .important-info {
-           display: flex;
-           justify-content: center;
-           align-items: center;
-           flex: 1;
-           text-align: center;
-           padding: 20px;
-           border: 1px solid #ccc;
-           background-color: #f9f9f9;
-        } */
     </style>
 </head>
 <body>
@@ -48,111 +50,72 @@
     </header>
 
     <div class="container">
-        <h2>Atalhos Importantes do Windows</h2>
-
-        <div class="atalho-container">
-            <div class="atalho-tecla"><button onclick="mostrarImagem('Ctrl + C')">Ctrl + C: Copiar</button></div>
-            <div class="atalho-imagem"><img id="imagemCtrlC" src="https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg" alt="Ctrl + C" class="hidden"></div>
-            <div class="important-info">Informação Importante</div>
+        <div class="atalhos-esquerda">
+            <div class="atalho-container">
+                <button onclick="mostrarImagem('Ctrl + C')">Ctrl + C: Copiar</button>
+            </div>
+            <div class="atalho-container">
+                <button onclick="mostrarImagem('Ctrl + V')">Ctrl + V: Colar</button>
+            </div>
+            <div class="atalho-container">
+                <button onclick="mostrarImagem('Ctrl + X')">Ctrl + X: Recortar</button>
+            </div>
+            <div class="atalho-container">
+                <button onclick="mostrarImagem('Ctrl + Z')">Ctrl + Z: Desfazer</button>
+            </div>
+            <div class="atalho-container">
+                <button onclick="mostrarImagem('Alt + Tab')">Alt + Tab: Alternar Janelas</button>
+            </div>
+            <div class="atalho-container">
+                <button onclick="mostrarImagem('Win + P')">Win + P: Projeção</button>
+            </div>
+            <div class="atalho-container">
+                <button onclick="mostrarImagem('Win')">Win: Menu Iniciar</button>
+            </div>
+            <div class="atalho-container">
+                <button onclick="mostrarImagem('Win + I')">Win + I: Configurações</button>
+            </div>
+            <div class="atalho-container">
+                <button onclick="mostrarImagem('Win + E')">Win + E: Explorador de Arquivos</button>
+            </div>
+            <div class="atalho-container">
+                <button onclick="mostrarImagem('Win + A')">Win + A: Central de Ações</button>
+            </div>
+            <div class="atalho-container">
+                <button onclick="mostrarImagem('PrtScn')">PrtScn: Captura de Tela</button>
+            </div>
         </div>
-
-        <div class="atalho-container">
-            <div class="atalho-tecla"><button onclick="mostrarImagem('Ctrl + V')">Ctrl + V: Colar</button></div>
-            <div class="atalho-imagem"><img id="imagemCtrlV" src="https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg" alt="Ctrl + V" class="hidden"></div>
-            <div class="important-info">Informação Importante</div>
-        </div>
-
-        <div class="atalho-container">
-            <div class="atalho-tecla"><button onclick="mostrarImagem('Ctrl + X')">Ctrl + X: Recortar</button></div>
-            <div class="atalho-imagem"><img id="imagemCtrlX" src="https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg" alt="Ctrl + X" class="hidden"></div>
-            <div class="important-info">Informação Importante</div>
-        </div>
-
-        <div class="atalho-container">
-            <div class="atalho-tecla"><button onclick="mostrarImagem('Ctrl + Z')">Ctrl + Z: Desfazer</button></div>
-            <div class="atalho-imagem"><img id="imagemCtrlZ" src="https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg" alt="Ctrl + Z" class="hidden"></div>
-            <div class="important-info">Informação Importante</div>
-        </div>
-
-        <div class="atalho-container">
-            <div class="atalho-tecla"><button onclick="mostrarImagem('Alt + Tab')">Alt + Tab: Alternar Janelas</button></div>
-            <div class="atalho-imagem"><img id="imagemAltTab" src="https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg" alt="Alt + Tab" class="hidden"></div>
-            <div class="important-info">Informação Importante</div>
-        </div>
-
-        <div class="atalho-container">
-            <div class="atalho-tecla"><button onclick="mostrarImagem('Win + P')">Win + P: Projeção</button></div>
-            <div class="atalho-imagem"><img id="imagemWinP" src="https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg" alt="Win + P" class="hidden"></div>
-            <div class="important-info">Informação Importante</div>
-        </div>
-
-        <div class="atalho-container">
-            <div class="atalho-tecla"><button onclick="mostrarImagem('Win')">Win: Menu Iniciar</button></div>
-            <div class="atalho-imagem"><img id="imagemWin" src="https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg" alt="Win" class="hidden"></div>
-            <div class="important-info">Informação Importante</div>
-        </div>
-
-        <div class="atalho-container">
-            <div class="atalho-tecla"><button onclick="mostrarImagem('Win + I')">Win + I: Configurações</button></div>
-            <div class="atalho-imagem"><img id="imagemWinI" src="https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg" alt="Win + I" class="hidden"></div>
-            <div class="important-info">Informação Importante</div>
-        </div>
-
-        <div class="atalho-container">
-            <div class="atalho-tecla"><button onclick="mostrarImagem('Win + E')">Win + E: Explorador de Arquivos</button></div>
-            <div class="atalho-imagem"><img id="imagemWinE" src="https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg" alt="Win + E" class="hidden"></div>
-            <div class="important-info">Informação Importante</div>
-        </div>
-
-        <div class="atalho-container">
-            <div class="atalho-tecla"><button onclick="mostrarImagem('Win + A')">Win + A: Central de Ações</button></div>
-            <div class="atalho-imagem"><img id="imagemWinA" src="https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg" alt="Win + A" class="hidden"></div>
-            <div class="important-info">Informação Importante</div>
-        </div>
-
-        <div class="atalho-container">
-            <div class="atalho-tecla"><button onclick="mostrarImagem('PrtScn')">PrtScn: Captura de Tela</button></div>
-            <div class="atalho-imagem"><img id="imagemPrtScn" src="https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg" alt="PrtScn" class="hidden"></div>
-            <div class="important-info">Informação Importante</div>
+        <div class="important-info">
+            <img id="imagemExibida" src="" alt="" class="hidden">
         </div>
     </div>
 
     <script>
         function mostrarImagem(atalho) {
             const imagens = {
-                'Ctrl + C': 'imagemCtrlC',
-                'Ctrl + V': 'imagemCtrlV',
-                'Ctrl + X': 'imagemCtrlX',
-                'Ctrl + Z': 'imagemCtrlZ',
-                'Alt + Tab': 'imagemAltTab',
-                'Win + P': 'imagemWinP',
-                'Win': 'imagemWin',
-                'Win + I': 'imagemWinI',
-                'Win + E': 'imagemWinE',
-                'Win + A': 'imagemWinA',
-                'PrtScn': 'imagemPrtScn'
+                'Ctrl + C': 'https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg',
+                'Ctrl + V': 'https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg',
+                'Ctrl + X': 'https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg',
+                'Ctrl + Z': 'https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg',
+                'Alt + Tab': 'https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg',
+                'Win + P': 'https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg',
+                'Win': 'https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg',
+                'Win + I': 'https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg',
+                'Win + E': 'https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg',
+                'Win + A': 'https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg',
+                'PrtScn': 'https://techforlearning.sd61.bc.ca/wp-content/uploads/sites/107/2018/04/WINDOWS-KEY-P.jpg'
             };
 
-            const imagemId = imagens[atalho];
-            if (imagemId) {
-                const imagem = document.getElementById(imagemId);
-                imagem.classList.remove('hidden');
-                // Oculta as outras imagens caso alguma esteja visível
-                Object.values(imagens).forEach(id => {
-                    if (id !== imagemId) {
-                        document.getElementById(id).classList.add('hidden');
-                    }
-                });
+            const imagemSrc = imagens[atalho];
+            const imagemExibida = document.getElementById('imagemExibida');
+
+            if (imagemSrc) {
+                imagemExibida.src = imagemSrc;
+                imagemExibida.classList.remove('hidden');
+            } else {
+                imagemExibida.classList.add('hidden');
             }
         }
     </script>
-
-    <div class="footer-image">
-        <div class="footer-text">
-            <p>Secretaria Municipal de Educação</p>
-            <p>Rua Silva Jardim, nº 59 – CEP 14730-000</p>
-            <p>Fone/Fax: (17) 3361-1095 / 3361-1365</p>
-        </div>
-    </div>
 </body>
 </html>
