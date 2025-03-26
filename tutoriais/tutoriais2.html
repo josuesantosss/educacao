@@ -11,22 +11,34 @@
     <style>
         .container {
             display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+            flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas menores */
         }
         .button-group {
-            width: 25%;
-            padding-right: 20px;
+            width: 100%; /* Garante que os botões ocupem a largura total em telas menores */
+            display: flex;
+            justify-content: center; /* Centraliza os botões horizontalmente */
+            flex-wrap: wrap; /* Permite que os botões quebrem para a próxima linha */
         }
         .important-info {
-            width: 300%;
+            width: 300px; /* Largura fixa para os blocos de informação */
             background-color: rgba(242, 242, 242, 1);
             padding: 20px;
-            margin: 40px;
+            margin: 20px; /* Reduz a margem para melhor espaçamento em telas menores */
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            opacity: 0; /* Inicialmente invisível */
+            transform: translateY(-20px); /* Inicialmente deslocado para cima */
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Transição suave */
+        }
+        .important-info.show {
+            opacity: 1; /* Torna visível */
+            transform: translateY(0); /* Retorna à posição original */
         }
         .important-info img {
             max-width: 100%;
@@ -66,39 +78,39 @@
     <div id="menu-container"></div>
     <br><br>
 
-    <div class="container" style="text-align: center;">
+    <div class="container">
         <div class="button-group">
-            <div class="important-info">
+            <div class="important-info" id="info-Ctrl + C">
                 <button class="button" onclick="mostrarImagem('Ctrl + C')">Copiar</button>
                 <p id="descricaoAtalho-Ctrl + C" class="hidden">Copia o conteúdo selecionado.</p>
                 <img id="imagemExibida-Ctrl + C" src="atalhos/ctrlC.png" alt="" class="hidden">
             </div>
-            <div class="important-info">
+            <div class="important-info" id="info-Ctrl + V">
                 <button class="button" onclick="mostrarImagem('Ctrl + V')">Colar</button>
                 <p id="descricaoAtalho-Ctrl + V" class="hidden">Cola o conteúdo que foi Copiado.</p>
                 <img id="imagemExibida-Ctrl + V" src="atalhos/ctrlV.png" alt="" class="hidden">
             </div>
-            <div class="important-info">
+            <div class="important-info" id="info-Ctrl + X">
                 <button class="button" onclick="mostrarImagem('Ctrl + X')">Recortar</button>
                 <p id="descricaoAtalho-Ctrl + X" class="hidden">Recorta o conteúdo selecionado.</p>
                 <img id="imagemExibida-Ctrl + X" src="atalhos/ctrlX.png" alt="" class="hidden">
             </div>
-            <div class="important-info">
+            <div class="important-info" id="info-Ctrl + Z">
                 <button class="button" onclick="mostrarImagem('Ctrl + Z')">Desfazer</button>
                 <p id="descricaoAtalho-Ctrl + Z" class="hidden">Desfaz a última ação.</p>
                 <img id="imagemExibida-Ctrl + Z" src="atalhos/ctrlZ.png" alt="" class="hidden">
             </div>
-            <div class="important-info">
+            <div class="important-info" id="info-Win + P">
                 <button class="button" onclick="mostrarImagem('Win + P')">Projeção</button>
                 <p id="descricaoAtalho-Win + P" class="hidden">Abre as opções de projeção para conectar a um projetor ou segunda tela [Duplicar, extender].</p>
                 <img id="imagemExibida-Win + P" src="atalhos/winP.png" alt="" class="hidden">
             </div>
-            <div class="important-info">
+            <div class="important-info" id="info-Win">
                 <button class="button" onclick="mostrarImagem('Win')">Menu Iniciar</button>
                 <p id="descricaoAtalho-Win" class="hidden">Abre o Menu Iniciar.</p>
                 <img id="imagemExibida-Win" src="atalhos/win.png" alt="" class="hidden">
             </div>
-            <div class="important-info">
+            <div class="important-info" id="info-PrtScn">
                 <button class="button" onclick="mostrarImagem('PrtScn')">Captura de Tela</button>
                 <p id="descricaoAtalho-PrtScn" class="hidden">Captura a tela inteira e copia para a área de transferência [Dica: cole em um documento Word].</p>
                 <img id="imagemExibida-PrtScn" src="atalhos/print.png" alt="" class="hidden">
@@ -106,7 +118,7 @@
         </div>
     </div>
 
-        <div class="footer-image">
+    <div class="footer-image">
         <div class="footer-text">
             <p>Secretaria Municipal de Educação</p>
             <p>Rua Silva Jardim, nº 59 – CEP 14730-000</p>
@@ -121,13 +133,16 @@
             botoes.forEach(botao => {
                 const descricao = document.getElementById(`descricaoAtalho-${botao}`);
                 const imagem = document.getElementById(`imagemExibida-${botao}`);
+                const infoDiv = document.getElementById(`info-${botao}`);
 
                 if (botao === atalho) {
                     descricao.classList.remove('hidden');
                     imagem.classList.remove('hidden');
+                    infoDiv.classList.add('show');
                 } else {
                     descricao.classList.add('hidden');
                     imagem.classList.add('hidden');
+                    infoDiv.classList.remove('show');
                 }
             });
         }
