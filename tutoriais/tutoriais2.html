@@ -35,16 +35,16 @@
             text-align: center;
         }
         .important-info img {
-            max-width: 100%;
-            height: auto;
-            object-fit: contain;
+            width: 14cm; /* Largura fixa */
+            height: 7cm; /* Altura fixa */
+            object-fit: contain; /* Mantém a proporção sem distorcer */
             opacity: 0;
             transition: opacity 0.5s ease, transform 0.5s ease;
-            transform: translateY(20px); /* Começa 20px abaixo */
+            transform: translateY(20px); /* Efeito descendente */
         }
         .important-info img.show {
             opacity: 1;
-            transform: translateY(0); /* Vem para a posição normal */
+            transform: translateY(0);
         }
         .hidden {
             display: none;
@@ -65,10 +65,18 @@
         }
         .description {
             margin: 10px 0;
-            height: 50px; /* Espaço fixo para a descrição */
+            height: 50px; /* Espaço fixo para evitar saltos no layout */
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+        @media (max-width: 768px) {
+            /* Ajuste responsivo para telas menores */
+            .important-info img {
+                width: 100%; /* Ocupa toda a largura disponível */
+                height: auto; /* Mantém proporção */
+                max-width: 14cm; /* Limita ao máximo 14cm */
+            }
         }
     </style>
 </head>
@@ -77,7 +85,7 @@
     <script src="menu-loader.js"></script>
 
     <header class="header">
-        <h1>Atalhos do Windows1</h1>
+        <h1>Atalhos do Windows</h1>
     </header>
 
     <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
@@ -141,19 +149,19 @@
                 const imagem = document.getElementById(`imagemExibida-${botao}`);
 
                 if (botao === atalho) {
-                    // Primeiro remove o hidden para que o elemento exista no DOM
+                    // Mostra a descrição e a imagem
                     descricao.classList.remove('hidden');
                     imagem.classList.remove('hidden');
                     
-                    // Força um recálculo do layout para que a transição funcione
+                    // Força o navegador a recalcular o layout para a animação funcionar
                     void descricao.offsetWidth;
                     void imagem.offsetWidth;
                     
-                    // Adiciona as classes para ativar a transição
+                    // Aplica o efeito de fade in descendente
                     descricao.style.opacity = 1;
                     imagem.classList.add('show');
                 } else {
-                    // Remove as classes de transição
+                    // Esconde os outros elementos
                     descricao.classList.add('hidden');
                     imagem.classList.add('hidden');
                     imagem.classList.remove('show');
