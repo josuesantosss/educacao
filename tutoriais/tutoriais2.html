@@ -35,14 +35,23 @@
             text-align: center;
         }
         .important-info img {
-            width: 14cm; /* Largura fixa */
-            height: 7cm; /* Altura fixa */
-            object-fit: contain; /* Mantém a proporção sem distorcer */
+            width: 14cm;
+            height: 7cm;
+            object-fit: contain;
             opacity: 0;
             transition: opacity 0.5s ease, transform 0.5s ease;
-            transform: translateY(20px); /* Efeito descendente */
+            transform: translateY(20px);
         }
-        .important-info img.show {
+        .important-info .description {
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: translateY(20px);
+            margin: 10px 0;
+            height: auto;
+            text-align: center;
+        }
+        .important-info img.show, 
+        .important-info .description.show {
             opacity: 1;
             transform: translateY(0);
         }
@@ -63,19 +72,11 @@
         .button:hover {
             background-color: #0056b3;
         }
-        .description {
-            margin: 10px 0;
-            height: 50px; /* Espaço fixo para evitar saltos no layout */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
         @media (max-width: 768px) {
-            /* Ajuste responsivo para telas menores */
             .important-info img {
-                width: 100%; /* Ocupa toda a largura disponível */
-                height: auto; /* Mantém proporção */
-                max-width: 14cm; /* Limita ao máximo 14cm */
+                width: 100%;
+                height: auto;
+                max-width: 14cm;
             }
         }
     </style>
@@ -149,23 +150,23 @@
                 const imagem = document.getElementById(`imagemExibida-${botao}`);
 
                 if (botao === atalho) {
-                    // Mostra a descrição e a imagem
+                    // Remove 'hidden' para exibir os elementos
                     descricao.classList.remove('hidden');
                     imagem.classList.remove('hidden');
                     
-                    // Força o navegador a recalcular o layout para a animação funcionar
+                    // Força o navegador a recalcular o layout
                     void descricao.offsetWidth;
                     void imagem.offsetWidth;
                     
                     // Aplica o efeito de fade in descendente
-                    descricao.style.opacity = 1;
+                    descricao.classList.add('show');
                     imagem.classList.add('show');
                 } else {
                     // Esconde os outros elementos
                     descricao.classList.add('hidden');
+                    descricao.classList.remove('show');
                     imagem.classList.add('hidden');
                     imagem.classList.remove('show');
-                    descricao.style.opacity = 0;
                 }
             });
         }
