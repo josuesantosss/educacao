@@ -12,16 +12,15 @@
         .container {
             display: flex;
             justify-content: center; /* Centraliza horizontalmente */
-            align-items: flex-start; /* Alinha os itens no topo */
             flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas menores */
         }
         .button-group {
-            width: 25%;
+            width: 300px; /* Largura fixa para cada grupo de botão */
             padding: 20px;
-            box-sizing: border-box; /* Garante que o padding não aumente a largura total */
             display: flex;
             flex-direction: column;
             align-items: center;
+            text-align: center;
         }
         .important-info {
             background-color: rgba(242, 242, 242, 1);
@@ -33,7 +32,6 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
-            width: 100%; /* Garante que cada div ocupe a largura total do button-group */
         }
         .important-info img {
             max-width: 100%;
@@ -42,10 +40,10 @@
             width: 21cm;
             height: 10.5cm;
             opacity: 0; /* Inicialmente invisível */
-            transition: opacity 0.5s ease, transform 0.5s ease; /* Adiciona transição suave */
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Transição suave para opacidade e transformação */
             transform: translateY(-20px); /* Inicia um pouco acima */
         }
-        .important-info img.visible {
+        .important-info img.show {
             opacity: 1; /* Torna visível */
             transform: translateY(0); /* Move para a posição original */
         }
@@ -139,11 +137,11 @@
                 if (botao === atalho) {
                     descricao.classList.remove('hidden');
                     imagem.classList.remove('hidden');
-                    imagem.classList.add('visible'); // Adiciona a classe para a transição
+                    imagem.classList.add('show'); // Adiciona a classe 'show' para a transição
                 } else {
                     descricao.classList.add('hidden');
                     imagem.classList.add('hidden');
-                    imagem.classList.remove('visible'); // Remove a classe para ocultar
+                    imagem.classList.remove('show'); // Remove a classe 'show' se não for o botão ativo
                 }
             });
         }
