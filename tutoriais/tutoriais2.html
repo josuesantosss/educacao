@@ -13,42 +13,44 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         .button-group {
-            width: 300px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
             padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
         }
         .important-info {
-            width: 300%;
             background-color: rgba(242, 242, 242, 1);
             padding: 20px;
-            margin: 10px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            height: 100%;
         }
         .important-info img {
-            width: 14cm;
-            height: 7cm;
+            width: 100%;
+            max-height: 200px;
             object-fit: contain;
             opacity: 0;
             transition: opacity 0.5s ease, transform 0.5s ease;
             transform: translateY(20px);
+            margin-top: 10px;
         }
         .important-info .description {
             opacity: 0;
             transition: opacity 0.5s ease, transform 0.5s ease;
             transform: translateY(20px);
             margin: 10px 0;
-            height: auto;
             text-align: center;
+            width: 100%;
         }
         .important-info img.show, 
         .important-info .description.show {
@@ -68,15 +70,15 @@
             font-size: 16px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            width: 100%;
+            max-width: 200px;
         }
         .button:hover {
             background-color: #0056b3;
         }
         @media (max-width: 768px) {
-            .important-info img {
-                width: 100%;
-                height: auto;
-                max-width: 14cm;
+            .button-group {
+                grid-template-columns: 1fr;
             }
         }
     </style>
