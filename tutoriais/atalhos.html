@@ -11,19 +11,22 @@
     <style>
         .container {
             display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         .button-group {
-            width: 25%;
-            padding-right: 20px;
-        }
-        .atalho-container {
-            margin-bottom: 10px;
+            width: 300px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
         .important-info {
-            width: 75%;
+            width: 300%;
             background-color: rgba(242, 242, 242, 1);
             padding: 20px;
-            margin: 40px;
+            margin: 10px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: flex;
@@ -32,11 +35,25 @@
             text-align: center;
         }
         .important-info img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
             width: 14cm;
             height: 7cm;
+            object-fit: contain;
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: translateY(20px);
+        }
+        .important-info .description {
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: translateY(20px);
+            margin: 10px 0;
+            height: auto;
+            text-align: center;
+        }
+        .important-info img.show, 
+        .important-info .description.show {
+            opacity: 1;
+            transform: translateY(0);
         }
         .hidden {
             display: none;
@@ -55,6 +72,13 @@
         .button:hover {
             background-color: #0056b3;
         }
+        @media (max-width: 768px) {
+            .important-info img {
+                width: 100%;
+                height: auto;
+                max-width: 14cm;
+            }
+        }
     </style>
 </head>
 <body>
@@ -71,21 +95,51 @@
 
     <div class="container">
         <div class="button-group">
-            <button class="button" onclick="mostrarImagem('Ctrl + C')">Copiar</button>
-            <button class="button" onclick="mostrarImagem('Ctrl + V')">Colar</button>
-            <button class="button" onclick="mostrarImagem('Ctrl + X')">Recortar</button>
-            <button class="button" onclick="mostrarImagem('Ctrl + Z')">Desfazer</button>
-            <button class="button" onclick="mostrarImagem('Win + P')">Projeção</button>
-            <button class="button" onclick="mostrarImagem('Win')">Menu Iniciar</button>
-            <button class="button" onclick="mostrarImagem('PrtScn')">Captura de Tela</button>
-        </div>
-        <div class="important-info">
-            <p id="descricaoAtalho" class="hidden"></p>
-            <img id="imagemExibida" src="" alt="" class="hidden">
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('Ctrl + C')">Copiar</button>
+                <div id="descricaoAtalho-Ctrl + C" class="description hidden">Copia o conteúdo selecionado.
+                    <p>Passo 1: Selecione o texto a ser copiado;</p>
+                    <p>Passo 2: Segure a tecla Ctrl e pressione a letra "C".</p></div>
+                <img id="imagemExibida-Ctrl + C" src="atalhos/ctrlC.png" alt="" class="hidden">
+            </div>
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('Ctrl + V')">Colar</button>
+                <div id="descricaoAtalho-Ctrl + V" class="description hidden">Cola o conteúdo que foi Copiado.
+                    <p>Passo 1: Coloque o cursor aonde o texto será colado;</p>
+                    <p>Passo 2: Segure a tecla Ctrl e pressione a letra "V" e o texto será colado.</p></div>
+                <img id="imagemExibida-Ctrl + V" src="atalhos/ctrlV.png" alt="" class="hidden">
+            </div>
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('Ctrl + X')">Recortar</button>
+                <div id="descricaoAtalho-Ctrl + X" class="description hidden">Recorta o conteúdo selecionado.</div>
+                <img id="imagemExibida-Ctrl + X" src="atalhos/ctrlX.png" alt="" class="hidden">
+            </div>
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('Ctrl + Z')">Desfazer</button>
+                <div id="descricaoAtalho-Ctrl + Z" class="description hidden">Desfaz a última ação.
+                     <p>Passo 1: Selecione o texto a ser recortado;</p>
+                    <p>Passo 2: Segure a tecla Ctrl e pressione a letra "X" e o texto será movido para o novo local.</p></div>
+                <img id="imagemExibida-Ctrl + Z" src="atalhos/ctrlZ.png" alt="" class="hidden">
+            </div>
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('Win + P')">Projeção</button>
+                <div id="descricaoAtalho-Win + P" class="description hidden">Abre as opções de projeção para conectar a um projetor ou segunda tela [Duplicar, extender].</div>
+                <img id="imagemExibida-Win + P" src="atalhos/winP.png" alt="" class="hidden">
+            </div>
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('Win')">Menu Iniciar</button>
+                <div id="descricaoAtalho-Win" class="description hidden">Abre o Menu Iniciar.</div>
+                <img id="imagemExibida-Win" src="atalhos/win.png" alt="" class="hidden">
+            </div>
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('PrtScn')">Captura de Tela</button>
+                <div id="descricaoAtalho-PrtScn" class="description hidden">Captura a tela inteira e copia para a área de transferência [Dica: cole em um documento Word].</div>
+                <img id="imagemExibida-PrtScn" src="atalhos/print.png" alt="" class="hidden">
+            </div>
         </div>
     </div>
 
-        <div class="footer-image">
+    <div class="footer-image">
         <div class="footer-text">
             <p>Secretaria Municipal de Educação</p>
             <p>Rua Silva Jardim, nº 59 – CEP 14730-000</p>
@@ -95,58 +149,33 @@
 
     <script>
         function mostrarImagem(atalho) {
-            const imagens = {
-                'Ctrl + C': {
-                    src: 'atalhos/ctrlC.png',
-                    descricao: 'Copia o conteúdo selecionado.'
-                },
-                'Ctrl + V': {
-                    src: 'atalhos/ctrlV.png',
-                    descricao: 'Cola o conteúdo que foi Copiado.'
-                },
-                'Ctrl + X': {
-                    src: 'atalhos/ctrlX.png',
-                    descricao: 'Recorta o conteúdo selecionado.'
-                },
-                'Ctrl + Z': {
-                    src: 'atalhos/ctrlZ.png',
-                    descricao: 'Desfaz a última ação.'
-                },
-                'Win + P': {
-                    src: 'atalhos/winP.png',
-                    descricao: 'Abre as opções de projeção para conectar a um projetor ou segunda tela [Duplicar, extender].'
-                },
-                'Win': {
-                    src: 'atalhos/win.png',
-                    descricao: 'Abre o Menu Iniciar.'
-                },
-                'PrtScn': {
-                    src: 'atalhos/print.png',
-                    descricao: 'Captura a tela inteira e copia para a área de transferência [Dica: cole em um documento Word].'
-                },
-                'aviso': {
-                    src: 'atalhos/aviso.png',
+            const botoes = ['Ctrl + C', 'Ctrl + V', 'Ctrl + X', 'Ctrl + Z', 'Win + P', 'Win', 'PrtScn'];
+
+            botoes.forEach(botao => {
+                const descricao = document.getElementById(`descricaoAtalho-${botao}`);
+                const imagem = document.getElementById(`imagemExibida-${botao}`);
+
+                if (botao === atalho) {
+                    // Remove 'hidden' para exibir os elementos
+                    descricao.classList.remove('hidden');
+                    imagem.classList.remove('hidden');
+                    
+                    // Força o navegador a recalcular o layout
+                    void descricao.offsetWidth;
+                    void imagem.offsetWidth;
+                    
+                    // Aplica o efeito de fade in descendente
+                    descricao.classList.add('show');
+                    imagem.classList.add('show');
+                } else {
+                    // Esconde os outros elementos
+                    descricao.classList.add('hidden');
+                    descricao.classList.remove('show');
+                    imagem.classList.add('hidden');
+                    imagem.classList.remove('show');
                 }
-            };
-
-            const imagemInfo = imagens[atalho];
-            const imagemExibida = document.getElementById('imagemExibida');
-            const descricaoAtalho = document.getElementById('descricaoAtalho');
-
-            if (imagemInfo) {
-                imagemExibida.src = imagemInfo.src;
-                imagemExibida.classList.remove('hidden');
-                descricaoAtalho.textContent = imagemInfo.descricao;
-                descricaoAtalho.classList.remove('hidden');
-            } else {
-                imagemExibida.classList.add('hidden');
-                descricaoAtalho.classList.add('hidden');
-            }
+            });
         }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            mostrarImagem('aviso'); // Exibe a imagem aviso.png ao carregar a página
-        });
     </script>
 
 </body>
