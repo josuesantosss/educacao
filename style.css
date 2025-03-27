@@ -38,19 +38,15 @@ body {
 }
 
 .menu-toggle {
-            font-family: 'Google Sans', Roboto, sans-serif;
-            font-weight: 500;
-            padding: 10px 15px;
-            background-color: #4285f4;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 10px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
 .menu-container {
     display: flex;
     justify-content: center;
