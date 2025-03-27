@@ -13,12 +13,14 @@
         h1, h2, h3 {
             font-family: 'Google Sans', sans-serif;
             font-weight: 500;
+            color: #2c3e50;
         }
         
         .header h1 {
             font-weight: 500;
             text-align: center;
             margin: 20px 0;
+            color: #2c3e50;
         }
         
         .container {
@@ -26,11 +28,15 @@
             justify-content: center;
             flex-wrap: wrap;
             font-family: 'Google Sans', Roboto, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
         
         .button-group {
-            width: 300px;
-            padding: 20px;
+            width: 100%;
+            max-width: 350px;
+            padding: 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -39,24 +45,34 @@
         
         .important-info {
             width: 100%;
-            background-color: rgba(242, 242, 242, 1);
+            background-color: white;
             padding: 20px;
-            margin: 10px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .important-info:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
         }
         
         .important-info img {
-            width: 7cm;
-            height: 3.5cm;
+            width: 100%;
+            max-width: 280px;
+            height: auto;
             object-fit: contain;
+            margin: 15px 0;
             opacity: 0;
             transition: opacity 0.5s ease, transform 0.5s ease;
             transform: translateY(20px);
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         
         .important-info .description {
@@ -67,6 +83,7 @@
             height: auto;
             text-align: center;
             font-family: 'Google Sans', Roboto, sans-serif;
+            color: #555;
         }
         
         .important-info img.show, 
@@ -80,38 +97,82 @@
         }
         
         .button {
-            padding: 10px 20px;
-            margin: 5px;
+            padding: 12px 24px;
+            margin: 8px 0;
             border: none;
-            border-radius: 5px;
-            background-color: #007bff;
+            border-radius: 6px;
+            background-color: #4285f4;
             color: white;
             font-size: 16px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
             font-family: 'Google Sans', Roboto, sans-serif;
             font-weight: 500;
+            width: 100%;
+            max-width: 250px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         
         .button:hover {
-            background-color: #0056b3;
+            background-color: #3367d6;
+            transform: translateY(-2px);
+        }
+        
+        .button:active {
+            transform: translateY(0);
         }
         
         .menu-toggle {
             font-family: 'Google Sans', Roboto, sans-serif;
             font-weight: 500;
+            padding: 10px 15px;
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .footer-text {
             font-family: 'Google Sans', Roboto, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f3f4;
+            margin-top: 30px;
+            color: #5f6368;
+        }
+        
+        .footer-text p {
+            margin: 5px 0;
         }
         
         @media (max-width: 768px) {
-            .important-info img {
-                width: 100%;
-                height: auto;
-                max-width: 14cm;
+            .button-group {
+                padding: 10px;
             }
+            
+            .important-info {
+                padding: 15px;
+            }
+            
+            .button {
+                padding: 10px 20px;
+                font-size: 15px;
+            }
+        }
+        
+        /* Animation for page load */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .header h1, .button-group {
+            animation: fadeIn 0.6s ease-out forwards;
         }
     </style>
 </head>
