@@ -9,90 +9,39 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald%3A400%2C600%2C700%7COpen%20Sans%3A400%2C600%2C700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:300,400,500,700&display=swap" rel="stylesheet">
     <style>
-        /* Adicione este estilo para o menu */
-        #menu-container {
-            display: none;
-            width: 100%;
-            background-color: #f8f9fa;
-            padding: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        #menu-container.show {
-            display: block;
-            animation: fadeIn 0.3s ease-out;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        h1, h2, h3 {
-            font-family: 'Google Sans', sans-serif;
-            font-weight: 500;
-            color: #2c3e50;
-        }
-        
-        .header h1 {
-            font-weight: 500;
-            text-align: center;
-            margin: 20px 0;
-            color: #2c3e50;
-        }
-        
         .container {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            font-family: 'Google Sans', Roboto, sans-serif;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
         }
-        
         .button-group {
-            width: 100%;
-            max-width: 350px;
-            padding: 15px;
+            width: 300px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
         }
-        
         .important-info {
             width: 100%;
-            background-color: white;
+            background-color: rgba(242, 242, 242, 1);
             padding: 20px;
-            margin: 10px 0;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
-        .important-info:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-        }
-        
         .important-info img {
-            width: 100%;
-            max-width: 280px;
-            height: auto;
+            width: 14cm;
+            height: 7cm;
             object-fit: contain;
-            margin: 15px 0;
             opacity: 0;
             transition: opacity 0.5s ease, transform 0.5s ease;
             transform: translateY(20px);
-            border-radius: 5px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
-        
         .important-info .description {
             opacity: 0;
             transition: opacity 0.5s ease, transform 0.5s ease;
@@ -100,112 +49,35 @@
             margin: 10px 0;
             height: auto;
             text-align: center;
-            font-family: 'Google Sans', Roboto, sans-serif;
-            color: #555;
         }
-        
         .important-info img.show, 
         .important-info .description.show {
             opacity: 1;
             transform: translateY(0);
         }
-        
         .hidden {
             display: none;
         }
-        
         .button {
-            padding: 12px 24px;
-            margin: 8px 0;
+            padding: 10px 20px;
+            margin: 5px;
             border: none;
-            border-radius: 6px;
-            background-color: #4285f4;
+            border-radius: 5px;
+            background-color: #007bff;
             color: white;
             font-size: 16px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            font-family: 'Google Sans', Roboto, sans-serif;
-            font-weight: 500;
-            width: 100%;
-            max-width: 250px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
         }
-        
         .button:hover {
-            background-color: #3367d6;
-            transform: translateY(-2px);
+            background-color: #0056b3;
         }
-        
-        .button:active {
-            transform: translateY(0);
-        }
-        
-        .menu-toggle {
-            font-family: 'Google Sans', Roboto, sans-serif;
-            font-weight: 500;
-            padding: 10px 15px;
-            background-color: #4285f4;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 10px auto;
-            display: block;
-        }
-        
-        .footer-text {
-            font-family: 'Google Sans', Roboto, sans-serif;
-            text-align: center;
-            padding: 20px;
-            background-color: #f1f3f4;
-            margin-top: 30px;
-            color: #5f6368;
-        }
-        
-        .footer-text p {
-            margin: 5px 0;
-        }
-        
         @media (max-width: 768px) {
-            .button-group {
-                padding: 10px;
+            .important-info img {
+                width: 100%;
+                height: auto;
+                max-width: 14cm;
             }
-            
-            .important-info {
-                padding: 15px;
-            }
-            
-            .button {
-                padding: 10px 20px;
-                font-size: 15px;
-            }
-            
-            /* Mostrar o botão de menu apenas em mobile */
-            .menu-toggle {
-                display: block;
-            }
-        }
-        
-        @media (min-width: 769px) {
-            /* Esconder o botão de menu em desktop */
-            .menu-toggle {
-                display: none;
-            }
-            
-            /* Mostrar o menu sempre em desktop */
-            #menu-container {
-                display: block !important;
-            }
-        }
-        
-        /* Animation for page load */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .header h1, .button-group {
-            animation: fadeIn 0.6s ease-out forwards;
         }
     </style>
 </head>
@@ -214,17 +86,57 @@
     <script src="menu-loader.js"></script>
 
     <header class="header">
-        <h1>Materiais Didáticos</h1>
+        <h1>Atalhos do Windows</h1>
     </header>
 
     <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
     <div id="menu-container"></div>
     <br><br>
 
-    <h1 style="text-align: center">Atalhos do Windows</h1>
-
     <div class="container">
-        <!-- Conteúdo dos botões permanece o mesmo -->
+        <div class="button-group">
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('Ctrl + C')">Copiar</button>
+                <div id="descricaoAtalho-Ctrl + C" class="description hidden">Copia o conteúdo selecionado.
+                    <p>Passo 1: Selecione o texto a ser copiado;</p>
+                    <p>Passo 2: Segure a tecla Ctrl e pressione a letra "C".</p></div>
+                <img id="imagemExibida-Ctrl + C" src="atalhos/ctrlC.png" alt="" class="hidden">
+            </div>
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('Ctrl + V')">Colar</button>
+                <div id="descricaoAtalho-Ctrl + V" class="description hidden">Cola o conteúdo que foi Copiado.
+                    <p>Passo 1: Coloque o cursor aonde o texto será colado;</p>
+                    <p>Passo 2: Segure a tecla Ctrl e pressione a letra "V" e o texto será colado.</p></div>
+                <img id="imagemExibida-Ctrl + V" src="atalhos/ctrlV.png" alt="" class="hidden">
+            </div>
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('Ctrl + X')">Recortar</button>
+                <div id="descricaoAtalho-Ctrl + X" class="description hidden">Recorta o conteúdo selecionado.</div>
+                <img id="imagemExibida-Ctrl + X" src="atalhos/ctrlX.png" alt="" class="hidden">
+            </div>
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('Ctrl + Z')">Desfazer</button>
+                <div id="descricaoAtalho-Ctrl + Z" class="description hidden">Desfaz a última ação.
+                     <p>Passo 1: Selecione o texto a ser recortado;</p>
+                    <p>Passo 2: Segure a tecla Ctrl e pressione a letra "X" e o texto será movido para o novo local.</p></div>
+                <img id="imagemExibida-Ctrl + Z" src="atalhos/ctrlZ.png" alt="" class="hidden">
+            </div>
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('Win + P')">Projeção</button>
+                <div id="descricaoAtalho-Win + P" class="description hidden">Abre as opções de projeção para conectar a um projetor ou segunda tela [Duplicar, extender].</div>
+                <img id="imagemExibida-Win + P" src="atalhos/winP.png" alt="" class="hidden">
+            </div>
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('Win')">Menu Iniciar</button>
+                <div id="descricaoAtalho-Win" class="description hidden">Abre o Menu Iniciar.</div>
+                <img id="imagemExibida-Win" src="atalhos/win.png" alt="" class="hidden">
+            </div>
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('PrtScn')">Captura de Tela</button>
+                <div id="descricaoAtalho-PrtScn" class="description hidden">Captura a tela inteira e copia para a área de transferência [Dica: cole em um documento Word].</div>
+                <img id="imagemExibida-PrtScn" src="atalhos/print.png" alt="" class="hidden">
+            </div>
+        </div>
     </div>
 
     <div class="footer-image">
@@ -236,34 +148,6 @@
     </div>
 
     <script>
-        // Função para mostrar/ocultar o menu
-        function toggleMenu() {
-            const menu = document.getElementById('menu-container');
-            menu.classList.toggle('show');
-            
-            // Alternar entre mostrar e ocultar com animação
-            if (menu.classList.contains('show')) {
-                menu.style.display = 'block';
-            } else {
-                // Espera a animação terminar antes de ocultar
-                setTimeout(() => {
-                    menu.style.display = 'none';
-                }, 300);
-            }
-        }
-        
-        // Fechar o menu ao clicar em um item (opcional)
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuItems = document.querySelectorAll('#menu-container a');
-            menuItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    if (window.innerWidth <= 768) {
-                        toggleMenu();
-                    }
-                });
-            });
-        });
-
         function mostrarImagem(atalho) {
             const botoes = ['Ctrl + C', 'Ctrl + V', 'Ctrl + X', 'Ctrl + Z', 'Win + P', 'Win', 'PrtScn'];
 
@@ -272,15 +156,19 @@
                 const imagem = document.getElementById(`imagemExibida-${botao}`);
 
                 if (botao === atalho) {
+                    // Remove 'hidden' para exibir os elementos
                     descricao.classList.remove('hidden');
                     imagem.classList.remove('hidden');
                     
+                    // Força o navegador a recalcular o layout
                     void descricao.offsetWidth;
                     void imagem.offsetWidth;
                     
+                    // Aplica o efeito de fade in descendente
                     descricao.classList.add('show');
                     imagem.classList.add('show');
                 } else {
+                    // Esconde os outros elementos
                     descricao.classList.add('hidden');
                     descricao.classList.remove('show');
                     imagem.classList.add('hidden');
