@@ -9,7 +9,13 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald%3A400%2C600%2C700%7COpen%20Sans%3A400%2C600%2C700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:300,400,500,700&display=swap" rel="stylesheet">
     <style>
-
+        /* Aplicando Google Sans como fonte principal */
+        body {
+            font-family: 'Google Sans', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
         
         h1, h2, h3 {
             font-family: 'Google Sans', sans-serif;
@@ -117,6 +123,7 @@
     </style>
 </head>
 <body>
+
     <script src="menu-loader.js"></script>
 
     <header class="header">
@@ -127,10 +134,7 @@
     <div id="menu-container"></div>
     <br><br>
 
-
-
     <h1 style="text-align: center">Atalhos do Windows</h1>
-
 
     <div class="container">
         <div class="button-group">
@@ -167,7 +171,7 @@
             </div>
             <div class="important-info">
                 <button class="button" onclick="mostrarImagem('Win')">Menu Iniciar</button>
-                <div id="descricaoAtalho-Win" class="description hidden">Abre o Menu Iniciar do Windows.</div>
+                <div id="descricaoAtalho-Win" class="description hidden">Abre o Menu Iniciar.</div>
                 <img id="imagemExibida-Win" src="atalhos/win.png" alt="" class="hidden">
             </div>
             <div class="important-info">
@@ -185,41 +189,8 @@
             <p>Fone/Fax: (17) 3361-1095 / 3361-1365</p>
         </div>
     </div>
-    
 
     <script>
-        // Verifica se estamos em um dispositivo móvel
-        function isMobile() {
-            return window.innerWidth <= 768;
-        }
-        
-        // Função para alternar o menu
-        function toggleMenu() {
-            const menu = document.getElementById('menu-container');
-            if (menu.style.display === 'block') {
-                menu.style.display = 'none';
-            } else {
-                menu.style.display = 'block';
-            }
-        }
-        
-        // Configuração inicial do menu
-        function setupMenu() {
-            const menu = document.getElementById('menu-container');
-            if (isMobile()) {
-                menu.style.display = 'none';
-            } else {
-                menu.style.display = 'block';
-            }
-        }
-        
-        // Configura o menu quando a página carrega
-        window.addEventListener('load', setupMenu);
-        
-        // Atualiza quando a janela é redimensionada
-        window.addEventListener('resize', setupMenu);
-        
-        // Sua função original para mostrar imagens
         function mostrarImagem(atalho) {
             const botoes = ['Ctrl + C', 'Ctrl + V', 'Ctrl + X', 'Ctrl + Z', 'Win + P', 'Win', 'PrtScn'];
 
@@ -228,15 +199,19 @@
                 const imagem = document.getElementById(`imagemExibida-${botao}`);
 
                 if (botao === atalho) {
+                    // Remove 'hidden' para exibir os elementos
                     descricao.classList.remove('hidden');
                     imagem.classList.remove('hidden');
                     
+                    // Força o navegador a recalcular o layout
                     void descricao.offsetWidth;
                     void imagem.offsetWidth;
                     
+                    // Aplica o efeito de fade in descendente
                     descricao.classList.add('show');
                     imagem.classList.add('show');
                 } else {
+                    // Esconde os outros elementos
                     descricao.classList.add('hidden');
                     descricao.classList.remove('show');
                     imagem.classList.add('hidden');
@@ -244,6 +219,12 @@
                 }
             });
         }
+        
+        function toggleMenu() {
+            const menu = document.getElementById('menu-container');
+            menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+        }
     </script>
+
 </body>
 </html>
