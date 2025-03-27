@@ -1,6 +1,6 @@
 /* Estilos Globais */
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', 'Google Sans', sans-serif;
     background-color: rgba(255, 255, 255, 1);
     color: rgba(33, 33, 33, 1);
     margin: 0;
@@ -8,6 +8,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    font-weight: 400; /* Peso regular como padrão */
+    line-height: 1.5; /* Melhora a legibilidade */
 }
 
 /* Cabeçalho */
