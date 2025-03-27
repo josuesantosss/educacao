@@ -189,35 +189,12 @@
     <script src="../creditos-loader.js"></script>
 
     <script>
-        function mostrarImagem(atalho) {
-            const botoes = ['Ctrl + C', 'Ctrl + V', 'Ctrl + X', 'Ctrl + Z', 'Win + P', 'Win', 'PrtScn'];
-
-            botoes.forEach(botao => {
-                const descricao = document.getElementById(`descricaoAtalho-${botao}`);
-                const imagem = document.getElementById(`imagemExibida-${botao}`);
-
-                if (botao === atalho) {
-                    // Remove 'hidden' para exibir os elementos
-                    descricao.classList.remove('hidden');
-                    imagem.classList.remove('hidden');
-                    
-                    // Força o navegador a recalcular o layout
-                    void descricao.offsetWidth;
-                    void imagem.offsetWidth;
-                    
-                    // Aplica o efeito de fade in descendente
-                    descricao.classList.add('show');
-                    imagem.classList.add('show');
-                } else {
-                    // Esconde os outros elementos
-                    descricao.classList.add('hidden');
-                    descricao.classList.remove('show');
-                    imagem.classList.add('hidden');
-                    imagem.classList.remove('show');
-                }
-            });
+        // Verifica se estamos em um dispositivo móvel
+        function isMobile() {
+            return window.innerWidth <= 768;
         }
         
+        // Função para alternar o menu
         function toggleMenu() {
             const menu = document.getElementById('menu-container');
             if (menu.style.display === 'block') {
@@ -226,8 +203,48 @@
                 menu.style.display = 'block';
             }
         }
-    </script>
+        
+        // Configuração inicial do menu
+        function setupMenu() {
+            const menu = document.getElementById('menu-container');
+            if (isMobile()) {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        }
+        
+        // Configura o menu quando a página carrega
+        window.addEventListener('load', setupMenu);
+        
+        // Atualiza quando a janela é redimensionada
+        window.addEventListener('resize', setupMenu);
+        
+        // Sua função original para mostrar imagens
+        function mostrarImagem(atalho) {
+            const botoes = ['Ctrl + C', 'Ctrl + V', 'Ctrl + X', 'Ctrl + Z', 'Win + P', 'Win', 'PrtScn'];
 
-    
+            botoes.forEach(botao => {
+                const descricao = document.getElementById(`descricaoAtalho-${botao}`);
+                const imagem = document.getElementById(`imagemExibida-${botao}`);
+
+                if (botao === atalho) {
+                    descricao.classList.remove('hidden');
+                    imagem.classList.remove('hidden');
+                    
+                    void descricao.offsetWidth;
+                    void imagem.offsetWidth;
+                    
+                    descricao.classList.add('show');
+                    imagem.classList.add('show');
+                } else {
+                    descricao.classList.add('hidden');
+                    descricao.classList.remove('show');
+                    imagem.classList.add('hidden');
+                    imagem.classList.remove('show');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
