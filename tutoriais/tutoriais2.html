@@ -9,57 +9,83 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald%3A400%2C600%2C700%7COpen%20Sans%3A400%2C600%2C700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:300,400,500,700&display=swap" rel="stylesheet">
     <style>
+        /* Aplicando Google Sans como fonte principal */
+        body {
+            font-family: 'Google Sans', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Google Sans', sans-serif;
+            font-weight: 500;
+        }
+        
+        .header h1 {
+            font-weight: 500;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
         .container {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
+            font-family: 'Google Sans', Roboto, sans-serif;
         }
+        
         .button-group {
-            width: 100%;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            width: 300px;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
+        
         .important-info {
+            width: 100%;
             background-color: rgba(242, 242, 242, 1);
             padding: 20px;
+            margin: 10px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            height: 100%;
         }
+        
         .important-info img {
-            width: 100%;
-            max-height: 200px;
+            width: 7cm;
+            height: 3.5cm;
             object-fit: contain;
             opacity: 0;
             transition: opacity 0.5s ease, transform 0.5s ease;
             transform: translateY(20px);
-            margin-top: 10px;
         }
+        
         .important-info .description {
             opacity: 0;
             transition: opacity 0.5s ease, transform 0.5s ease;
             transform: translateY(20px);
             margin: 10px 0;
+            height: auto;
             text-align: center;
-            width: 100%;
+            font-family: 'Google Sans', Roboto, sans-serif;
         }
+        
         .important-info img.show, 
         .important-info .description.show {
             opacity: 1;
             transform: translateY(0);
         }
+        
         .hidden {
             display: none;
         }
+        
         .button {
             padding: 10px 20px;
             margin: 5px;
@@ -70,15 +96,28 @@
             font-size: 16px;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            width: 100%;
-            max-width: 200px;
+            font-family: 'Google Sans', Roboto, sans-serif;
+            font-weight: 500;
         }
+        
         .button:hover {
             background-color: #0056b3;
         }
+        
+        .menu-toggle {
+            font-family: 'Google Sans', Roboto, sans-serif;
+            font-weight: 500;
+        }
+        
+        .footer-text {
+            font-family: 'Google Sans', Roboto, sans-serif;
+        }
+        
         @media (max-width: 768px) {
-            .button-group {
-                grid-template-columns: 1fr;
+            .important-info img {
+                width: 100%;
+                height: auto;
+                max-width: 14cm;
             }
         }
     </style>
@@ -113,14 +152,14 @@
             </div>
             <div class="important-info">
                 <button class="button" onclick="mostrarImagem('Ctrl + X')">Recortar</button>
-                <div id="descricaoAtalho-Ctrl + X" class="description hidden">Recorta o conteúdo selecionado.</div>
+                <div id="descricaoAtalho-Ctrl + X" class="description hidden">Recorta o conteúdo selecionado.
+                    <p>Passo 1: Selecione o texto a ser recortado;</p>
+                    <p>Passo 2: Segure a tecla Ctrl e pressione a letra "X" e o texto será movido para o novo local.</p></div>
                 <img id="imagemExibida-Ctrl + X" src="atalhos/ctrlX.png" alt="" class="hidden">
             </div>
             <div class="important-info">
                 <button class="button" onclick="mostrarImagem('Ctrl + Z')">Desfazer</button>
-                <div id="descricaoAtalho-Ctrl + Z" class="description hidden">Desfaz a última ação.
-                     <p>Passo 1: Selecione o texto a ser recortado;</p>
-                    <p>Passo 2: Segure a tecla Ctrl e pressione a letra "X" e o texto será movido para o novo local.</p></div>
+                <div id="descricaoAtalho-Ctrl + Z" class="description hidden">Desfaz a última ação.</div>
                 <img id="imagemExibida-Ctrl + Z" src="atalhos/ctrlZ.png" alt="" class="hidden">
             </div>
             <div class="important-info">
@@ -177,6 +216,11 @@
                     imagem.classList.remove('show');
                 }
             });
+        }
+        
+        function toggleMenu() {
+            const menu = document.getElementById('menu-container');
+            menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
         }
     </script>
 
