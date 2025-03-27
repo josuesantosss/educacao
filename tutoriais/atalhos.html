@@ -13,12 +13,14 @@
         h1, h2, h3 {
             font-family: 'Google Sans', sans-serif;
             font-weight: 500;
+            color: #2c3e50;
         }
         
         .header h1 {
             font-weight: 500;
             text-align: center;
             margin: 20px 0;
+            color: #2c3e50;
         }
         
         .container {
@@ -26,11 +28,15 @@
             justify-content: center;
             flex-wrap: wrap;
             font-family: 'Google Sans', Roboto, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
         
         .button-group {
-            width: 300px;
-            padding: 20px;
+            width: 100%;
+            max-width: 350px;
+            padding: 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -39,24 +45,34 @@
         
         .important-info {
             width: 100%;
-            background-color: rgba(242, 242, 242, 1);
+            background-color: white;
             padding: 20px;
-            margin: 10px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .important-info:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
         }
         
         .important-info img {
-            width: 7cm;
-            height: 3.5cm;
+            width: 100%;
+            max-width: 280px;
+            height: auto;
             object-fit: contain;
+            margin: 15px 0;
             opacity: 0;
             transition: opacity 0.5s ease, transform 0.5s ease;
             transform: translateY(20px);
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         
         .important-info .description {
@@ -67,6 +83,7 @@
             height: auto;
             text-align: center;
             font-family: 'Google Sans', Roboto, sans-serif;
+            color: #555;
         }
         
         .important-info img.show, 
@@ -80,38 +97,82 @@
         }
         
         .button {
-            padding: 10px 20px;
-            margin: 5px;
+            padding: 12px 24px;
+            margin: 8px 0;
             border: none;
-            border-radius: 5px;
-            background-color: #007bff;
+            border-radius: 6px;
+            background-color: #4285f4;
             color: white;
             font-size: 16px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
             font-family: 'Google Sans', Roboto, sans-serif;
             font-weight: 500;
+            width: 100%;
+            max-width: 250px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         
         .button:hover {
-            background-color: #0056b3;
+            background-color: #3367d6;
+            transform: translateY(-2px);
+        }
+        
+        .button:active {
+            transform: translateY(0);
         }
         
         .menu-toggle {
             font-family: 'Google Sans', Roboto, sans-serif;
             font-weight: 500;
+            padding: 10px 15px;
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .footer-text {
             font-family: 'Google Sans', Roboto, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f3f4;
+            margin-top: 30px;
+            color: #5f6368;
+        }
+        
+        .footer-text p {
+            margin: 5px 0;
         }
         
         @media (max-width: 768px) {
-            .important-info img {
-                width: 100%;
-                height: auto;
-                max-width: 14cm;
+            .button-group {
+                padding: 10px;
             }
+            
+            .important-info {
+                padding: 15px;
+            }
+            
+            .button {
+                padding: 10px 20px;
+                font-size: 15px;
+            }
+        }
+        
+        /* Animation for page load */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .header h1, .button-group {
+            animation: fadeIn 0.6s ease-out forwards;
         }
     </style>
 </head>
@@ -132,92 +193,104 @@
     <div class="container">
         <div class="button-group">
             <div class="important-info">
-                <button class="button" onclick="mostrarImagem('Ctrl + C')">Copiar</button>
-                <div id="descricaoAtalho-Ctrl + C" class="description hidden">Copia o conteúdo selecionado.
+                <button class="button" onclick="mostrarImagem('Ctrl + C')">Copiar (Ctrl + C)</button>
+                <div id="descricaoAtalho-Ctrl + C" class="description hidden">
+                    <p><strong>Copia o conteúdo selecionado.</strong></p>
                     <p>Passo 1: Selecione o texto a ser copiado;</p>
-                    <p>Passo 2: Segure a tecla Ctrl e pressione a letra "C".</p></div>
-                <img id="imagemExibida-Ctrl + C" src="atalhos/ctrlC.png" alt="" class="hidden">
+                    <p>Passo 2: Segure a tecla Ctrl e pressione a letra "C".</p>
+                    <p><em>Dica: Você pode copiar arquivos, pastas e outros itens da mesma maneira!</em></p>
+                </div>
+                <img id="imagemExibida-Ctrl + C" src="atalhos/ctrlC.png" alt="Ilustração do atalho Ctrl+C" class="hidden">
             </div>
             <div class="important-info">
-                <button class="button" onclick="mostrarImagem('Ctrl + V')">Colar</button>
-                <div id="descricaoAtalho-Ctrl + V" class="description hidden">Cola o conteúdo que foi Copiado.
+                <button class="button" onclick="mostrarImagem('Ctrl + V')">Colar (Ctrl + V)</button>
+                <div id="descricaoAtalho-Ctrl + V" class="description hidden">
+                    <p><strong>Cola o conteúdo que foi copiado.</strong></p>
                     <p>Passo 1: Coloque o cursor aonde o texto será colado;</p>
-                    <p>Passo 2: Segure a tecla Ctrl e pressione a letra "V" e o texto será colado.</p></div>
-                <img id="imagemExibida-Ctrl + V" src="atalhos/ctrlV.png" alt="" class="hidden">
+                    <p>Passo 2: Segure a tecla Ctrl e pressione a letra "V" e o texto será colado.</p>
+                    <p><em>Observação: O conteúdo permanece na área de transferência até ser substituído.</em></p>
+                </div>
+                <img id="imagemExibida-Ctrl + V" src="atalhos/ctrlV.png" alt="Ilustração do atalho Ctrl+V" class="hidden">
             </div>
             <div class="important-info">
-                <button class="button" onclick="mostrarImagem('Ctrl + X')">Recortar</button>
-                <div id="descricaoAtalho-Ctrl + X" class="description hidden">Recorta o conteúdo selecionado.
+                <button class="button" onclick="mostrarImagem('Ctrl + X')">Recortar (Ctrl + X)</button>
+                <div id="descricaoAtalho-Ctrl + X" class="description hidden">
+                    <p><strong>Recorta o conteúdo selecionado.</strong></p>
                     <p>Passo 1: Selecione o texto a ser recortado;</p>
-                    <p>Passo 2: Segure a tecla Ctrl e pressione a letra "X" e o texto será movido para o novo local.</p></div>
-                <img id="imagemExibida-Ctrl + X" src="atalhos/ctrlX.png" alt="" class="hidden">
-            </div>
-            <div class="important-info">
-                <button class="button" onclick="mostrarImagem('Ctrl + Z')">Desfazer</button>
-                <div id="descricaoAtalho-Ctrl + Z" class="description hidden">Desfaz a última ação.</div>
-                <img id="imagemExibida-Ctrl + Z" src="atalhos/ctrlZ.png" alt="" class="hidden">
-            </div>
-            <div class="important-info">
-                <button class="button" onclick="mostrarImagem('Win + P')">Projeção</button>
-                <div id="descricaoAtalho-Win + P" class="description hidden">Abre as opções de projeção para conectar a um projetor ou segunda tela [Duplicar, extender].</div>
-                <img id="imagemExibida-Win + P" src="atalhos/winP.png" alt="" class="hidden">
-            </div>
-            <div class="important-info">
-                <button class="button" onclick="mostrarImagem('Win')">Menu Iniciar</button>
-                <div id="descricaoAtalho-Win" class="description hidden">Abre o Menu Iniciar.</div>
-                <img id="imagemExibida-Win" src="atalhos/win.png" alt="" class="hidden">
-            </div>
-            <div class="important-info">
-                <button class="button" onclick="mostrarImagem('PrtScn')">Captura de Tela</button>
-                <div id="descricaoAtalho-PrtScn" class="description hidden">Captura a tela inteira e copia para a área de transferência [Dica: cole em um documento Word].</div>
-                <img id="imagemExibida-PrtScn" src="atalhos/print.png" alt="" class="hidden">
+                    <p>Passo 2: Segure a tecla Ctrl e pressione a letra "X" e o texto será movido para o novo local.</p>
+                    <p><em>Diferença: Copiar duplica o conteúdo, recortar move o conteúdo.</em></p>
+                </div>
+                <img id="imagemExibida-Ctrl + X" src="atalhos/ctrlX.png" alt="Ilustração do atalho Ctrl+X" class="hidden">
             </div>
         </div>
-    </div>
-
-    <div class="footer-image">
-        <div class="footer-text">
-            <p>Secretaria Municipal de Educação</p>
-            <p>Rua Silva Jardim, nº 59 – CEP 14730-000</p>
-            <p>Fone/Fax: (17) 3361-1095 / 3361-1365</p>
-        </div>
-    </div>
-
-    <script>
-        function mostrarImagem(atalho) {
-            const botoes = ['Ctrl + C', 'Ctrl + V', 'Ctrl + X', 'Ctrl + Z', 'Win + P', 'Win', 'PrtScn'];
-
-            botoes.forEach(botao => {
-                const descricao = document.getElementById(`descricaoAtalho-${botao}`);
-                const imagem = document.getElementById(`imagemExibida-${botao}`);
-
-                if (botao === atalho) {
-                    // Remove 'hidden' para exibir os elementos
-                    descricao.classList.remove('hidden');
-                    imagem.classList.remove('hidden');
-                    
-                    // Força o navegador a recalcular o layout
-                    void descricao.offsetWidth;
-                    void imagem.offsetWidth;
-                    
-                    // Aplica o efeito de fade in descendente
-                    descricao.classList.add('show');
-                    imagem.classList.add('show');
-                } else {
-                    // Esconde os outros elementos
-                    descricao.classList.add('hidden');
-                    descricao.classList.remove('show');
-                    imagem.classList.add('hidden');
-                    imagem.classList.remove('show');
-                }
-            });
-        }
         
-        function toggleMenu() {
-            const menu = document.getElementById('menu-container');
-            menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
-        }
-    </script>
-
-</body>
-</html>
+        <div class="button-group">
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('Ctrl + Z')">Desfazer (Ctrl + Z)</button>
+                <div id="descricaoAtalho-Ctrl + Z" class="description hidden">
+                    <p><strong>Desfaz a última ação.</strong></p>
+                    <p>Pressione Ctrl+Z para desfazer a última alteração feita.</p>
+                    <p><em>Dica: Em muitos programas, você pode pressionar várias vezes para desfazer múltiplas ações!</em></p>
+                </div>
+                <img id="imagemExibida-Ctrl + Z" src="atalhos/ctrlZ.png" alt="Ilustração do atalho Ctrl+Z" class="hidden">
+            </div>
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('Win + P')">Projeção (Win + P)</button>
+                <div id="descricaoAtalho-Win + P" class="description hidden">
+                    <p><strong>Abre as opções de projeção para conectar a um projetor ou segunda tela.</strong></p>
+                    <p>Opções disponíveis:</p>
+                    <ul style="text-align: left; margin-left: 20px;">
+                        <li>Somente tela do computador</li>
+                        <li>Duplicar</li>
+                        <li>Estender</li>
+                        <li>Somente segunda tela</li>
+                    </ul>
+                </div>
+                <img id="imagemExibida-Win + P" src="atalhos/winP.png" alt="Ilustração do atalho Win+P" class="hidden">
+            </div>
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('Win')">Menu Iniciar (Win)</button>
+                <div id="descricaoAtalho-Win" class="description hidden">
+                    <p><strong>Abre o Menu Iniciar.</strong></p>
+                    <p>Pressione a tecla do Windows (⊞) para abrir o menu iniciar.</p>
+                    <p><em>Dica: Comece a digitar imediatamente para pesquisar programas e arquivos!</em></p>
+                </div>
+                <img id="imagemExibida-Win" src="atalhos/win.png" alt="Ilustração da tecla Windows" class="hidden">
+            </div>
+        </div>
+        
+        <div class="button-group">
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('PrtScn')">Captura de Tela (PrtScn)</button>
+                <div id="descricaoAtalho-PrtScn" class="description hidden">
+                    <p><strong>Captura a tela inteira e copia para a área de transferência.</strong></p>
+                    <p>Passo 1: Pressione a tecla Print Screen (PrtScn);</p>
+                    <p>Passo 2: Abra um programa como Paint ou Word e cole (Ctrl+V) a imagem.</p>
+                    <p><em>Dicas avançadas:</em></p>
+                    <ul style="text-align: left; margin-left: 20px;">
+                        <li>Alt+PrtScn captura apenas a janela ativa</li>
+                        <li>Win+Shift+S abre a ferramenta de recorte</li>
+                    </ul>
+                </div>
+                <img id="imagemExibida-PrtScn" src="atalhos/print.png" alt="Ilustração da tecla Print Screen" class="hidden">
+            </div>
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('Alt + Tab')">Alternar Janelas (Alt + Tab)</button>
+                <div id="descricaoAtalho-Alt + Tab" class="description hidden">
+                    <p><strong>Alterna entre janelas abertas.</strong></p>
+                    <p>Passo 1: Mantenha pressionada a tecla Alt;</p>
+                    <p>Passo 2: Pressione Tab para navegar entre as janelas;</p>
+                    <p>Passo 3: Solte as teclas para selecionar a janela.</p>
+                    <p><em>Dica: Win+Tab mostra todas as janelas em uma vista mais detalhada.</em></p>
+                </div>
+                <img id="imagemExibida-Alt + Tab" src="atalhos/altTab.png" alt="Ilustração do atalho Alt+Tab" class="hidden">
+            </div>
+            <div class="important-info">
+                <button class="button" onclick="mostrarImagem('Ctrl + Shift + Esc')">Gerenciador de Tarefas (Ctrl + Shift + Esc)</button>
+                <div id="descricaoAtalho-Ctrl + Shift + Esc" class="description hidden">
+                    <p><strong>Abre diretamente o Gerenciador de Tarefas.</strong></p>
+                    <p>Pressione Ctrl+Shift+Esc para abrir o Gerenciador de Tarefas.</p>
+                    <p><em>Útil para:</em></p>
+                    <ul style="text-align: left; margin-left: 20px;">
+                        <li>Verificar desempenho do sistema</li>
+                        <li>Fechar programas não respondendo</
