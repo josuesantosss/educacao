@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const creditosHTML = `
         <div class="creditos">
             <span class="texto-branco">Site criado por </span>
-            <a href="https://www.instagram.com/josuesantos" target="_blank">Josué Santos</a>
+            <a href="https://www.instagram.com/josuesantos" target="_blank">Josué Santos</a> <span class="texto-branco"> 2025.</span>
         </div>
     `;
     
