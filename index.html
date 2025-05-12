@@ -9,6 +9,17 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald%3A400%2C600%2C700%7COpen%20Sans%3A400%2C600%2C700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:300,400,500,700&display=swap" rel="stylesheet">
 
+<div id="popup" class="popup-overlay">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h3>Para erros nas postagens, reporte aqui.</h3>
+            <p></p>
+            <a href="https://forms.gle/yn4AmvsVXoyHEi8m6" target="_blank">
+                <button class="report-btn">Reportar erro</button>
+            </a>
+        </div>
+    </div>
+
 <style>
             /* Estilos para o popup */
         .popup-overlay {
@@ -23,7 +34,7 @@
             align-items: center;
             z-index: 1000;
         }
-        
+
         .popup-content {
             background-color: white;
             padding: 20px;
@@ -32,84 +43,65 @@
             width: 80%;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative; /* Para posicionar o botão de fechar */
         }
-        
+
         .popup-content h3 {
             margin-top: 0;
             color: #2c3e50;
         }
-        
+
         .popup-content p {
             margin-bottom: 20px;
         }
-        
-        .popup-btn {
-            background-color: #3498db;
+
+        .report-btn {
+            background-color: #e74c3c; /* Cor vermelha para destacar o erro */
             color: white;
             border: none;
             padding: 10px 20px;
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+            text-decoration: none; /* Remover sublinhado do link */
         }
-        
-        .popup-btn:hover {
-            background-color: #2980b9;
+
+        .report-btn:hover {
+            background-color: #c0392b;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: #777;
         }
 
 </style>
 
-</head>
-<body>
-    <!-- Popup -->
+    <script>
+        // Função para fechar o popup
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
 
-<div id="popup" class="popup-overlay">
-    <div class="popup-content">
-        <h3>Para erros nas postagens, reporte aqui.</h3>
-        <a href="https://forms.gle/yn4AmvsVXoyHEi8m6" class="popup-btn report-btn" target="_blank">Reportar erro</a>
-    </div>
-</div>
+        // Opcional: Fechar o popup após alguns segundos (15 segundos neste exemplo)
+        setTimeout(function() {
+            document.getElementById('popup').style.display = 'none';
+        }, 15000);
 
-<style>
-.report-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    text-decoration: none;
-    background-color: #f44336; /* Cor vermelha para destacar o botão de reportar */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.report-btn:hover {
-    background-color: #d32f2f;
-}
-
-/* Mantenha o estilo existente do botão de fechar, se necessário */
-.popup-btn {
-    /* Seus estilos existentes para o botão */
-    margin-top: 10px; /* Adicione um pouco de espaço entre os botões */
-}
-</style>
-
-<script>
-function closePopup() {
-    document.getElementById('popup').style.display = 'none';
-}
-
-// Ocultar o popup inicialmente (opcional, dependendo de como você o exibe)
-document.addEventListener('DOMContentLoaded', function() {
-    const popup = document.getElementById('popup');
-    if (popup) {
-        popup.style.display = 'none';
-    }
-});
-
-// Para exibir o popup em algum momento, você precisará de alguma lógica como:
-// document.getElementById('popup').style.display = 'flex';
-</script>
+        // Exibir o popup quando a página carregar (opcional)
+        window.onload = function() {
+            document.getElementById('popup').style.display = 'flex';
+        };
+    </script>
 
 <!-- Fim do Pop Up -->
 
@@ -140,17 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
     
-    <script>
-        // Função para fechar o popup
-        function closePopup() {
-            document.getElementById('popup').style.display = 'none';
-        }
-        
-        // Opcional: Fechar o popup após alguns segundos (5 segundos neste exemplo)
-        setTimeout(function() {
-            document.getElementById('popup').style.display = 'none';
-        }, 15000);
-    </script>
+
     <script src="menu-loader.js"></script>
     <script src="creditos-loader.js"></script>
 </body>
