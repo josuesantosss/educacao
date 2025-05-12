@@ -63,13 +63,55 @@
 <body>
     <!-- Popup -->
 
-    <div id="popup" class="popup-overlay">
-        <div class="popup-content">
-            <h3>Atenção!</h3>
-            <p>🟢 O segundo Bimestre já está postado!</p>
-            <button class="popup-btn" onclick="closePopup()">Fechar</button>
-        </div>
+<div id="popup" class="popup-overlay">
+    <div class="popup-content">
+        <h3>Para erros nas postagens, reporte aqui.</h3>
+        <a href="https://forms.gle/yn4AmvsVXoyHEi8m6" class="popup-btn report-btn" target="_blank">Reportar erro</a>
     </div>
+</div>
+
+<style>
+.report-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #f44336; /* Cor vermelha para destacar o botão de reportar */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.report-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Mantenha o estilo existente do botão de fechar, se necessário */
+.popup-btn {
+    /* Seus estilos existentes para o botão */
+    margin-top: 10px; /* Adicione um pouco de espaço entre os botões */
+}
+</style>
+
+<script>
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+// Ocultar o popup inicialmente (opcional, dependendo de como você o exibe)
+document.addEventListener('DOMContentLoaded', function() {
+    const popup = document.getElementById('popup');
+    if (popup) {
+        popup.style.display = 'none';
+    }
+});
+
+// Para exibir o popup em algum momento, você precisará de alguma lógica como:
+// document.getElementById('popup').style.display = 'flex';
+</script>
+
+<!-- Fim do Pop Up -->
 
     <header class="header">
         <h1>Materiais Didáticos</h1>
