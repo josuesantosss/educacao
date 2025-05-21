@@ -12,6 +12,104 @@
 <body>
     <script src="menu-loader.js"></script>
 
+    <!-- Inicio do Pop Up -->
+
+    <div id="popup" class="popup-overlay">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h3>⚠️ As aulas de mátemática foram corrigidas!</h3>
+            <p></p>
+            </a>
+        </div>
+    </div>
+
+<style>
+            /* Estilos para o popup */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 80%;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative; /* Para posicionar o botão de fechar */
+        }
+
+        .popup-content h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        .popup-content p {
+            margin-bottom: 20px;
+        }
+
+        .report-btn {
+            background-color: #e74c3c; /* Cor vermelha para destacar o erro */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none; /* Remover sublinhado do link */
+        }
+
+        .report-btn:hover {
+            background-color: #c0392b;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: #777;
+        }
+
+</style>
+
+    <script>
+        // Função para fechar o popup
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        // Opcional: Fechar o popup após alguns segundos (15 segundos neste exemplo)
+        setTimeout(function() {
+            document.getElementById('popup').style.display = 'none';
+        }, 15000);
+
+        // Exibir o popup quando a página carregar (opcional)
+        window.onload = function() {
+            document.getElementById('popup').style.display = 'flex';
+        };
+    </script>
+
+<!-- Fim do Pop Up -->
+
+    
+
     <header class="header">
         <h1>Materiais Didáticos</h1>
     </header>
