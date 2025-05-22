@@ -273,26 +273,6 @@ img {
 }
 
 
-    /* BOTÕES */
 
-#mensagemBtn {
-  position: fixed;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  z-index: 9999;
-}
-
-
-/* @media (max-width: 768px) {
-  #mensagemBtn {
-    right: 20px;
-    width: 40px;
-    height: 40px;
-  }
-} */
 
 
