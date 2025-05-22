@@ -275,11 +275,25 @@ img {
 
     /* BOTÕES */
 
-#messageBtn,
-#topoBtn {
-  width: 24px;
-  height: 24px;
-  display: block;
-  margin: auto;
+#mensagemBtn {
+  position: fixed;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: block; /* ou "none" se quiser que ele só apareça em determinadas condições */
+  z-index: 1000;
 }
+
+
+/* @media (max-width: 768px) {
+  #mensagemBtn {
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+} */
+
 
