@@ -272,3 +272,28 @@ img {
     font-size: 3em;
 }
 
+
+            /* Botão de ERRO */
+        .error-button {
+            background-color: #dc3545; /* Cor de fundo vermelha para erro */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px; /* Espaçamento entre o ícone e o texto */
+            transition: background-color 0.3s ease;
+        }
+
+        .error-button:hover {
+            background-color: #c82333; /* Um tom mais escuro ao passar o mouse */
+        }
+
+        .error-button img {
+            width: 24px; /* Tamanho do ícone */
+            height: 24px;
+        }
+
