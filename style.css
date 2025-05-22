@@ -274,7 +274,15 @@ img {
 
 
             /* Botão de ERRO */
-        .error-button {
+
+            .error-button {
+            /* Posição Fixa */
+            position: fixed;
+            bottom: 20px; /* 20px do fundo */
+            right: 20px; /* 20px da direita */
+            z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+
+            /* Estilos do botão */
             background-color: #dc3545; /* Cor de fundo vermelha para erro */
             color: white;
             padding: 10px 20px;
@@ -286,6 +294,7 @@ img {
             align-items: center;
             gap: 8px; /* Espaçamento entre o ícone e o texto */
             transition: background-color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacá-lo */
         }
 
         .error-button:hover {
@@ -295,5 +304,16 @@ img {
         .error-button img {
             width: 24px; /* Tamanho do ícone */
             height: 24px;
+        }
+
+        /* Apenas para demonstração: conteúdo para simular scroll */
+        .content {
+            height: 150vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e9ecef;
+            color: #495057;
+            font-size: 2em;
         }
 
