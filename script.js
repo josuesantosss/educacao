@@ -41,3 +41,7 @@ function ajustarBotaoParaMobile() {
 // Chama a função de ajuste ao carregar a página e ao redimensionar a janela
 window.onload = ajustarBotaoParaMobile;
 window.onresize = ajustarBotaoParaMobile;
+
+function abrirFormulario() {
+    window.open("https://forms.gle/SkSY3rkgnHUPmbBJ7", "_blank");
+}
