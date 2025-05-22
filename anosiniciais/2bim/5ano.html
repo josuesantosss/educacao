@@ -370,17 +370,15 @@
 
 
         <!-- BOTÃO DE ERRO -->
-    <div class="content">Role a página para ver o botão fixo</div>
-
-    <button id="errorReporterButton" class="error-button">
-        <img src="https://i.ibb.co/ZpTC3Q0N/message.png" alt="Ícone de Erro">
-        Reportar um Erro
-    </button>
+            <img id="errorImageButton"
+         src="https://i.ibb.co/ZpTC3Q0N/message.png"
+         alt="Reportar Erro"
+         onclick="reportarErro()">
 
     <script>
-        document.getElementById('errorReporterButton').addEventListener('click', function() {
+        function reportarErro() {
             window.open('https://forms.gle/HXSREPyhW6cSNmYh9', '_blank');
-        });
+        }
     </script>
 
         <!-- FIM DO BOTÃO DE ERRO -->
