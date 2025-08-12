@@ -1,24 +1,20 @@
-fetch('6-body.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('6-body-container').innerHTML = data;
-    });
+const pages = [6, 7, 8, 9];
 
-fetch('7-body.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('7-body-container').innerHTML = data;
-    });
-
-fetch('8-body.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('8-body-container').innerHTML = data;
-    });
-
-fetch('9-body.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('9-body-container').innerHTML = data;
-    });
-
+pages.forEach(num => {
+    fetch(`${num}-body.html`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Erro ao carregar ${num}-body.html`);
+            }
+            return response.text();
+        })
+        .then(data => {
+            const container = document.getElementById(`${num}-body-container`);
+            if (container) {
+                container.innerHTML = data;
+            } else {
+                console.warn(`Elemento #${num}-body-container não encontrado.`);
+            }
+        })
+        .catch(error => console.error(error));
+});
