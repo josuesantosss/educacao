@@ -1,21 +1,99 @@
-<div class="container">
-    <h2>Bem-vindo à página do 3º bimestre do 9º ano.</h2>
-    <p><strong>Escolha a disciplina:</strong></p>
+    <style>
+        /* Centralizar o conteúdo */
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
 
-    <select id="disciplinaSelect"> 
-        <option value="">-- Selecione --</option>
-        <option value="artes">Artes</option>
-        <option value="ciencias">Ciências</option>
-        <option value="edfisica">Educação Física</option>
-        <option value="geografia">Geografia</option>
-        <option value="historia">História</option>
-        <option value="ingles">Língua Inglesa</option>
-        <option value="portugues">Língua Portuguesa</option>
-        <option value="matematica">Matemática</option>
-        <option value="projeto_convivencia">Projeto de Convivência</option>
-    </select>
-    <br><br>
-    <button>Buscar</button>
+        /* Botão */
+        button {
+            background-color: #007BFF;
+            color: rgba(255, 255, 255, 1);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        button:active {
+            background-color: #004494;
+            transform: scale(0.98);
+        }
+
+        /* Dropdown */
+        #disciplinaSelect {
+            width: 250px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            background-color: #ffffff;
+            font-size: 16px;
+            color: #333;
+            outline: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 18px;
+        }
+        #disciplinaSelect:hover {
+            border-color: #007BFF;
+        }
+        #disciplinaSelect:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        /* Tabelas escondidas inicialmente */
+        table {
+            margin: 30px auto;
+            border-collapse: collapse;
+            width: 90%;
+            display: none; /* escondidas até clicar em buscar */
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bem-vindo à página do 3º bimestre do 3º ano.</h2>
+        <p><strong>Escolha a disciplina:</strong></p>
+
+        <select id="disciplinaSelect">
+            <option value="">-- Selecione --</option>
+            <option value="livro-estudante">Livro do Estudante</option>
+            <option value="artes">Artes</option>
+            <option value="ciencias">Ciências</option>
+            <option value="edfisica">Educação Física</option>
+            <option value="geografia">Geografia</option>
+            <option value="historia">História</option>
+            <option value="ingles">Língua Inglesa</option>
+            <option value="portugues">Língua Portuguesa</option>
+            <option value="matematica">Matemática</option>
+            <option value="projeto_convivencia">Projeto de Convivência</option>
+        </select>
+        
+        <br><br>
+        <button onclick="buscarTabela()">Buscar</button>
 
     <table id="artes" class="tabela-materia" border="1" style="display:none; margin-top:20px;">
         <th>Artes</th>
