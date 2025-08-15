@@ -20,12 +20,12 @@
 
 <script>
 function mostrarTabela(id) {
-    // Oculta todas as tabelas
+    // Oculta todas
     document.querySelectorAll(".tabela-materia").forEach(tabela => {
         tabela.style.display = "none";
     });
 
-    // Exibe apenas a selecionada
+    // Mostra a selecionada
     if (id) {
         const tabelaSelecionada = document.getElementById(id);
         if (tabelaSelecionada) {
@@ -36,7 +36,7 @@ function mostrarTabela(id) {
 }
 </script>
 
-<!-- Tabelas (todas inicialmente ocultas) -->
+<!-- Tabelas -->
 <table id="artes" class="tabela-materia" border="1" style="display:none;">
     <tr><th>Artes</th></tr>
     <tr><td>I N D I S P O N Í V E L</td></tr>
@@ -81,7 +81,4 @@ function mostrarTabela(id) {
     <tr><th>PROJETO DE CONVIVÊNCIA</th></tr>
     <tr><td>I N D I S P O N Í V E L</td></tr>
 </table>
-
-
-  </table>
     </div>
