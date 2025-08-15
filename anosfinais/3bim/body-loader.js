@@ -1,21 +1,40 @@
+// body-loader.js
 document.addEventListener('DOMContentLoaded', () => {
-    // Pega o número da página (6, 7, 8, etc.)
     const match = window.location.pathname.match(/(\d+)ano\.html$/);
-    if (!match) return; // se não achar número, sai
+    if (!match) return;
     const num = match[1];
 
     fetch(`${num}-body.html`)
-        .then(response => {
-            if (!response.ok) throw new Error(`Erro ao carregar ${num}-body.html`);
-            return response.text();
-        })
+        .then(res => res.text())
         .then(html => {
             const container = document.getElementById(`${num}-body-container`);
-            if (container) {
-                container.innerHTML = html;
-            } else {
-                console.error(`Container #${num}-body-container não encontrado`);
+            if (!container) return;
+
+            container.innerHTML = html;
+
+            // Adiciona listener ao botão depois que ele existe
+            const botao = container.querySelector("button");
+            if (botao) {
+                botao.addEventListener("click", () => {
+                    const id = container.querySelector("#disciplinaSelect").value;
+
+                    // Oculta todas as tabelas
+                    container.querySelectorAll(".tabela-materia").forEach(tabela => {
+                        tabela.style.display = "none";
+                    });
+
+                    // Mostra a tabela selecionada
+                    if (id) {
+                        const tabelaSelecionada = container.querySelector(`#${id}`);
+                        if (tabelaSelecionada) {
+                            tabelaSelecionada.style.display = "table";
+                            tabelaSelecionada.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    } else {
+                        alert("Por favor, selecione uma disciplina.");
+                    }
+                });
             }
         })
-        .catch(err => console.error(err));
+        .catch(console.error);
 });
