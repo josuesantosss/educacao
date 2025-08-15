@@ -1,20 +1,33 @@
     <!-- CONTEÚDO DA PÁGINA -->
     
-    <div class="container">
-        <h2>Bem-vindo à página do 3º bimestre do 9º ano.</h2>
-        <p><strong>Escolha a disciplina:</strong></p>
-        <div class="button-group">
-            <a href="#artes" class="button" onclick="scrollToTable('artes')">Artes</a>
-            <a href="#ciencias" class="button" onclick="scrollToTable('ciencias')">Ciências</a>
-            <a href="#edfisica" class="button" onclick="scrollToTable('edfisica')">Educação Física</a>
-            <a href="#geografia" class="button" onclick="scrollToTable('geografia')">Geografia</a>
-            <a href="#historia" class="button" onclick="scrollToTable('historia')">História</a>
-            <a href="#ingles" class="button" onclick="scrollToTable('ingles')">Língua Inglesa</a>
-            <a href="#portugues" class="button" onclick="scrollToTable('portugues')">Língua Portuguesa</a>
-            <a href="#matematica" class="button" onclick="scrollToTable('matematica')">Matemática</a>
-            <a href="#projeto_convivencia" class="button" onclick="scrollToTable('projeto_convivencia')">Projeto de Convivência</a>
-        </div>
-    </div>
+<div class="container">
+    <h2>Bem-vindo à página do 3º bimestre do 9º ano.</h2>
+    <p><strong>Escolha a disciplina:</strong></p>
+
+    <select id="disciplinaSelect" onchange="scrollToTable(this.value)">
+        <option value="">-- Selecione --</option>
+        <option value="artes">Artes</option>
+        <option value="ciencias">Ciências</option>
+        <option value="edfisica">Educação Física</option>
+        <option value="geografia">Geografia</option>
+        <option value="historia">História</option>
+        <option value="ingles">Língua Inglesa</option>
+        <option value="portugues">Língua Portuguesa</option>
+        <option value="matematica">Matemática</option>
+        <option value="projeto_convivencia">Projeto de Convivência</option>
+    </select>
+</div>
+
+<script>
+function scrollToTable(id) {
+    if (!id) return; // Se nada for selecionado, não faz nada
+    const element = document.getElementById(id);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+</script>
+
 
     <table id="artes" border="1">
         <tr>
