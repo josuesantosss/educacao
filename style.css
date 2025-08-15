@@ -20,6 +20,7 @@ body {
     padding: 20px;
 }
 
+
 /* Menu */
 .menu {
     background-color: rgba(0, 0, 0, 0.8);
@@ -271,6 +272,32 @@ img {
     .login-title {
     font-size: 3em;
 }
+
+/* Botão */
+button {
+    background-color: #007BFF; /* Azul padrão, pode trocar */
+    color: rgba(255, 255, 255, 1);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Efeito ao passar o mouse */
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Efeito ao clicar */
+button:active {
+    background-color: #004494;
+    transform: scale(0.98);
+}
+
 
 
 
