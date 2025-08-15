@@ -4,7 +4,11 @@
     <h2>Bem-vindo à página do 3º bimestre do 9º ano.</h2>
     <p><strong>Escolha a disciplina:</strong></p>
 
-    <select id="disciplinaSelect" onchange="scrollToTable(this.value)">
+<div class="container">
+    <h2>Bem-vindo à página do 3º bimestre do 9º ano.</h2>
+    <p><strong>Escolha a disciplina:</strong></p>
+
+    <select id="disciplinaSelect" onchange="mostrarTabela(this.value)">
         <option value="">-- Selecione --</option>
         <option value="artes">Artes</option>
         <option value="ciencias">Ciências</option>
@@ -19,110 +23,68 @@
 </div>
 
 <script>
-function scrollToTable(id) {
-    if (!id) return; // Se nada for selecionado, não faz nada
-    const element = document.getElementById(id);
-    if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+function mostrarTabela(id) {
+    // Oculta todas as tabelas
+    document.querySelectorAll(".tabela-materia").forEach(tabela => {
+        tabela.style.display = "none";
+    });
+
+    // Exibe apenas a selecionada
+    if (id) {
+        const tabelaSelecionada = document.getElementById(id);
+        if (tabelaSelecionada) {
+            tabelaSelecionada.style.display = "table";
+            tabelaSelecionada.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 }
 </script>
 
+<!-- Tabelas (todas inicialmente ocultas) -->
+<table id="artes" class="tabela-materia" border="1" style="display:none;">
+    <tr><th>Artes</th></tr>
+    <tr><td>I N D I S P O N Í V E L</td></tr>
+</table>
 
-    <table id="artes" border="1">
-        <tr>
-            <th>Artes</th>
-        </tr>
-        <tr>
-  <tr><td>I N D I S P O N Í V E L</td></tr>
-        
-        </tr>
-    </table>
-    <br>
+<table id="ciencias" class="tabela-materia" border="1" style="display:none;">
+    <tr><th>Ciências</th></tr>
+    <tr><td>I N D I S P O N Í V E L</td></tr>
+</table>
 
-    <table id="ciencias" border="1">
-        <tr>
-            <th>Ciências</th>
-        </tr>
-        <tr>
-<table>
-  <tr><td>I N D I S P O N Í V E L</td></tr>
-        
-        </tr>
-    </table>
-    <br>
+<table id="edfisica" class="tabela-materia" border="1" style="display:none;">
+    <tr><th>Educação Física</th></tr>
+    <tr><td>I N D I S P O N Í V E L</td></tr>
+</table>
 
-    <table id="edfisica" border="1">
-        <tr>
-            <th>Educação Física</th>
-        </tr>
-        <tr>
-  <tr><td>I N D I S P O N Í V E L</td></tr>
-        
-        </tr>
-    </table>
-    <br>
+<table id="geografia" class="tabela-materia" border="1" style="display:none;">
+    <tr><th>Geografia</th></tr>
+    <tr><td>I N D I S P O N Í V E L</td></tr>
+</table>
 
-    <table id="geografia" border="1">
-        <tr>
-            <th>Geografia</th>
-        </tr>
-        <tr>
-  <tr><td>I N D I S P O N Í V E L</td></tr>
-    
-    </table>
-    <br>
+<table id="historia" class="tabela-materia" border="1" style="display:none;">
+    <tr><th>História</th></tr>
+    <tr><td>I N D I S P O N Í V E L</td></tr>
+</table>
 
-    <table id="historia" border="1">
-        <tr>
-            <th>História</th>
-        </tr>
-        <tr>
-  <tr><td>I N D I S P O N Í V E L</td></tr>
-  
-        </tr>
-    </table>
-    <br>
+<table id="ingles" class="tabela-materia" border="1" style="display:none;">
+    <tr><th>Língua Inglesa</th></tr>
+    <tr><td>I N D I S P O N Í V E L</td></tr>
+</table>
 
-    <table id="ingles" border="1">
-        <tr>
-            <th>Língua Inglesa</th>
-        </tr>
-        <tr>
-  <tr><td>I N D I S P O N Í V E L</td></tr>
-        
-        </tr>
-    </table>
-    <br>
+<table id="portugues" class="tabela-materia" border="1" style="display:none;">
+    <tr><th>Língua Portuguesa</th></tr>
+    <tr><td>I N D I S P O N Í V E L</td></tr>
+</table>
 
-    <table id="portugues" border="1">
-        <tr>
-            <th>Língua Portuguesa</th>
-        </tr>
-        <tr>
-  <tr><td>I N D I S P O N Í V E L</td></tr>
-        
-        </tr>
-    </table>
-    <br>
+<table id="matematica" class="tabela-materia" border="1" style="display:none;">
+    <tr><th>Matemática</th></tr>
+    <tr><td>I N D I S P O N Í V E L</td></tr>
+</table>
 
-    <table id="matematica" border="1">
-        <tr>
-            <th>Matemática</th>
-        </tr>
-        <tr>
-  <tr><td>I N D I S P O N Í V E L</td></tr>
-        
-        </tr>
-    </table>
-        <br>
-
-<div id="projeto_convivencia">
-  <table border="1">
-    <tr>
-      <th>PROJETO DE CONVIVÊNCIA</th>
-    </tr>
-  <tr><td>I N D I S P O N Í V E L</td></tr>
+<table id="projeto_convivencia" class="tabela-materia" border="1" style="display:none;">
+    <tr><th>PROJETO DE CONVIVÊNCIA</th></tr>
+    <tr><td>I N D I S P O N Í V E L</td></tr>
+</table>
 
 
   </table>
