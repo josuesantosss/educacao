@@ -18,70 +18,72 @@
     </select>
     <br><br>
     <button onclick="buscarTabela()">Buscar</button>
+
+    <!-- Tabelas -->
+    <table id="artes" class="tabela-materia" border="1" style="display:none; margin-top:20px;">
+        <tr><th>Artes</th></tr>
+        <tr><td>I N D I S P O N Í V E L</td></tr>
+    </table>
+
+    <table id="ciencias" class="tabela-materia" border="1" style="display:none; margin-top:20px;">
+        <tr><th>Ciências</th></tr>
+        <tr><td>I N D I S P O N Í V E L</td></tr>
+    </table>
+
+    <table id="edfisica" class="tabela-materia" border="1" style="display:none; margin-top:20px;">
+        <tr><th>Educação Física</th></tr>
+        <tr><td>I N D I S P O N Í V E L</td></tr>
+    </table>
+
+    <table id="geografia" class="tabela-materia" border="1" style="display:none; margin-top:20px;">
+        <tr><th>Geografia</th></tr>
+        <tr><td>I N D I S P O N Í V E L</td></tr>
+    </table>
+
+    <table id="historia" class="tabela-materia" border="1" style="display:none; margin-top:20px;">
+        <tr><th>História</th></tr>
+        <tr><td>I N D I S P O N Í V E L</td></tr>
+    </table>
+
+    <table id="ingles" class="tabela-materia" border="1" style="display:none; margin-top:20px;">
+        <tr><th>Língua Inglesa</th></tr>
+        <tr><td>I N D I S P O N Í V E L</td></tr>
+    </table>
+
+    <table id="portugues" class="tabela-materia" border="1" style="display:none; margin-top:20px;">
+        <tr><th>Língua Portuguesa</th></tr>
+        <tr><td>I N D I S P O N Í V E L</td></tr>
+    </table>
+
+    <table id="matematica" class="tabela-materia" border="1" style="display:none; margin-top:20px;">
+        <tr><th>Matemática</th></tr>
+        <tr><td>I N D I S P O N Í V E L</td></tr>
+    </table>
+
+    <table id="projeto_convivencia" class="tabela-materia" border="1" style="display:none; margin-top:20px;">
+        <tr><th>PROJETO DE CONVIVÊNCIA</th></tr>
+        <tr><td>I N D I S P O N Í V E L</td></tr>
+    </table>
 </div>
 
 <script>
 function buscarTabela() {
     const id = document.getElementById("disciplinaSelect").value;
 
-    // Oculta todas
+    // Oculta todas as tabelas
     document.querySelectorAll(".tabela-materia").forEach(tabela => {
         tabela.style.display = "none";
     });
 
-    // Mostra a selecionada
+    // Mostra a tabela selecionada
     if (id) {
         const tabelaSelecionada = document.getElementById(id);
         if (tabelaSelecionada) {
             tabelaSelecionada.style.display = "table";
             tabelaSelecionada.scrollIntoView({ behavior: 'smooth' });
         }
+    } else {
+        alert("Por favor, selecione uma disciplina.");
     }
 }
 </script>
-
-<!-- Tabelas -->
-<table id="artes" class="tabela-materia" border="1" style="display:none;">
-    <tr><th>Artes</th></tr>
-    <tr><td>I N D I S P O N Í V E L</td></tr>
-</table>
-
-<table id="ciencias" class="tabela-materia" border="1" style="display:none;">
-    <tr><th>Ciências</th></tr>
-    <tr><td>I N D I S P O N Í V E L</td></tr>
-</table>
-
-<table id="edfisica" class="tabela-materia" border="1" style="display:none;">
-    <tr><th>Educação Física</th></tr>
-    <tr><td>I N D I S P O N Í V E L</td></tr>
-</table>
-
-<table id="geografia" class="tabela-materia" border="1" style="display:none;">
-    <tr><th>Geografia</th></tr>
-    <tr><td>I N D I S P O N Í V E L</td></tr>
-</table>
-
-<table id="historia" class="tabela-materia" border="1" style="display:none;">
-    <tr><th>História</th></tr>
-    <tr><td>I N D I S P O N Í V E L</td></tr>
-</table>
-
-<table id="ingles" class="tabela-materia" border="1" style="display:none;">
-    <tr><th>Língua Inglesa</th></tr>
-    <tr><td>I N D I S P O N Í V E L</td></tr>
-</table>
-
-<table id="portugues" class="tabela-materia" border="1" style="display:none;">
-    <tr><th>Língua Portuguesa</th></tr>
-    <tr><td>I N D I S P O N Í V E L</td></tr>
-</table>
-
-<table id="matematica" class="tabela-materia" border="1" style="display:none;">
-    <tr><th>Matemática</th></tr>
-    <tr><td>I N D I S P O N Í V E L</td></tr>
-</table>
-
-<table id="projeto_convivencia" class="tabela-materia" border="1" style="display:none;">
-    <tr><th>PROJETO DE CONVIVÊNCIA</th></tr>
-    <tr><td>I N D I S P O N Í V E L</td></tr>
-</table>
