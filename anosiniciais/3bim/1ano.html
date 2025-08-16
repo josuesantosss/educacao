@@ -1,298 +1,43 @@
-    <style>
-        /* Centralizar o conteúdo */
-        .container {
-            max-width: 600px;
-            margin: 40px auto;
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Botão */
-        button {
-            background-color: #007BFF;
-            color: rgba(255, 255, 255, 1);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        button:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
-        }
-        button:active {
-            background-color: #004494;
-            transform: scale(0.98);
-        }
-
-        /* Dropdown */
-        #disciplinaSelect {
-            width: 250px;
-            padding: 10px 14px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            background-color: #ffffff;
-            font-size: 16px;
-            color: #333;
-            outline: none;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            appearance: none;
-            background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
-            background-repeat: no-repeat;
-            background-position: right 10px center;
-            background-size: 18px;
-        }
-        #disciplinaSelect:hover {
-            border-color: #007BFF;
-        }
-        #disciplinaSelect:focus {
-            border-color: #007BFF;
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-        }
-
-        /* Tabelas escondidas inicialmente */
-        table {
-            margin: 30px auto;
-            border-collapse: collapse;
-            width: 90%;
-            display: none; /* escondidas até clicar em buscar */
-        }
-        table, th, td {
-            border: 1px solid #ccc;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background: #007BFF;
-            color: white;
-        }
-    </style>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiais Didáticos</title>
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oswald%3A400%2C600%2C700%7COpen%20Sans%3A400%2C600%2C700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:300,400,500,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h2>Bem-vindo à página do 3º bimestre do 3º ano.</h2>
-        <p><strong>Escolha a disciplina:</strong></p>
+    <script src="menu-loader.js"></script>
+    <script src="body-loader.js"></script>
 
-        <select id="disciplinaSelect">
-            <option value="">-- Selecione --</option>
-            <option value="livro-estudante">Livro do Estudante</option>
-            <option value="artes">Artes</option>
-            <option value="ciencias">Ciências</option>
-            <option value="edfisica">Educação Física</option>
-            <option value="geografia">Geografia</option>
-            <option value="historia">História</option>
-            <option value="ingles">Língua Inglesa</option>
-            <option value="portugues">Língua Portuguesa</option>
-            <option value="matematica">Matemática</option>
-            <option value="projeto_convivencia">Projeto de Convivência</option>
-        </select>
-        
-        <br><br>
-        <button onclick="buscarTabela()">Buscar</button>
+    <header class="header">
+        <h1>Materiais Didáticos</h1>
+    </header>
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+    <div id="menu-container"></div>
+    <br><br>
+
+    <div id="1-body-container"></div>
+    <br><br>
 
 
-        <table id="livro-estudante" class="tabela-materia" border="1" style="display:none; margin-top:20px;">
-        <th>Livro do Estudante</th>
-            <tr><td>Matemática</td><td><a href="https://acervocmsp.educacao.sp.gov.br/137955/1261407.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Língua Portuguesa</td><td><a href="https://acervocmsp.educacao.sp.gov.br/137954/1261391.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Ciências, Geografia, História e Língua Inglesa</td><td><a href="https://acervocmsp.educacao.sp.gov.br/137956/1261409.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-        
-    </table>
-
-    <table id="artes" class="tabela-materia" border="1" style="display:none; margin-top:20px;">
-        <th>Artes</th>
-            <tr><td>Aula 1 - EXPLORANDO A ARTE DO TEATRO</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132047/1165115.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 2 - DESCOBRINDO O MUNDO DO TEATRO</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132048/1168353.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 3 - APRENDENDO E SE DIVERTINDO COM OS JOGOS TEATRAIS</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132049/1164341.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 4 - BRINCANDO DE SER COM JOGOS TEATRAIS</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132050/1142912.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 5 - EXPLORANDO O ESPAÇO</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132051/1165023.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 6 - CORPO EM MOVIMENTO</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132052/1165044.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 7 - IMPROVISANDO UMA CENA</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132053/1168579.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 8 - O QUE É FAZ DE CONTA?</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132054/1142745.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 9 - IMPROVISO NO FAZ DE CONTA</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132055/1167676.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 10 - IMPROVISO COM MÚSICA E OBJETOS</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132056/1168597.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 11 - IMPROVISO CÊNICO COM NARRAÇÃO - PARTE 1</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132057/1168625.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 12 - IMPROVISO CÊNICO COM NARRAÇÃO – PARTE 2</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132059/1168642.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 13 - BRINCAR DE FAZ DE CONTA</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132060/1168649.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 14 - ENTRANDO NA HISTÓRIA DE FAZ DE CONTA</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132061/1168658.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 15 - FAZ DE CONTA QUE ESTOU NA ÁFRICA</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132062/1169284.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 16 - CONHECENDO OS POVOS INDÍGENAS NO FAZ DE CONTA</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132063/1169247.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-        
-    </table>
-
-    <table id="ciencias" class="tabela-materia" border="1" style="display:none; margin-top:20px;">
-        <tr><th>Ciências</th></tr>
-            <tr><td>Aula 1 - BANHO É BOM! (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/125541/1268528.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 2 - NOSSOS DENTES (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/125543/1268983.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 3 - LAVAR AS MÃOS (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/125545/1268987.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 4 - XÔ, PIOLHO! (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/125547/1268991.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 5 - APRENDENDO MAIS SOBRE HIGIENE (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/125555/1268994.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 6 - HIGIENE E ALIMENTAÇÃO (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/125558/1268997.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 7 - SAI PARA LÁ, DOENÇA! (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/125619/1269000.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 8 - OUTRAS FORMAS DE EVITAR DOENÇAS (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/125624/1269003.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-    </table>
-
-    <table id="edfisica" class="tabela-materia" border="1" style="display:none; margin-top:20px;">
-        <tr><th>Educação Física</th></tr>
-            <tr><td>Aula 1 - GINÁSTICA PARA TODOS: VEM BRINCAR E APRENDER – PARTE 1</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132024/1156268.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 2 - GINÁSTICA PARA TODOS: VEM BRINCAR E APRENDER – PARTE 2</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132026/1150226.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 3 - Posturas básicas</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132027/1150252.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 4 - BRINCANDO COM AS POSTURAS BÁSICAS</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132028/1163298.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 5 - Circuito</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132029/1150341.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 6 - Elaborando um circuito</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132032/1156408.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 7 - Unindo os movimentos</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132034/1150296.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 8 - CONHECENDO OS MOVIMENTOS GÍMNICOS</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132035/1150004.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 9 - VAMOS GIRAR!</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132037/1151781.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 10 - Vamos manter o equilíbrio!</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132038/1163319.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 11 - BRINCANDO</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132039/1163345.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 12 - DA CAMBALHOTA AO ROLAMENTO – PARTE 1</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132041/1151884.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 13 - DA CAMBALHOTA AO ROLAMENTO – PARTE 2</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132042/1163422.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 14 - De cabeça para baixo</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132043/1143103.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 15 - Ginástica com objetos</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132045/1143189.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 16 - Elaborando uma coreografia</td><td><a href="https://acervocmsp.educacao.sp.gov.br/132046/1151828.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-
-    </table>
-
-    <table id="geografia" class="tabela-materia" border="1" style="display:none; margin-top:20px;">
-        <tr><th>Geografia</th></tr>
-        <tr>
-            <tr><td>Aula 1 - ONDE VOCÊ MORA E ESTUDA? (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/125510/1270286.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 2 - SE ESSA RUA FOSSE MINHA! (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/125513/1270289.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 3 - ELEMENTOS NO CAMINHO (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/125514/1270893.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 4 - O ENTORNO DA ESCOLA (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/125515/1270901.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 5 - MOBILIDADE E SEGURANÇA (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/125517/1270905.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 6 - OS ESPAÇOS PÚBLICOS (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/125571/1270910.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 7 - CONVIVER NOS ESPAÇOS PÚBLICOS (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/125574/1270913.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 8 - BRINCADEIRAS NOS ESPAÇOS PÚBLICOS (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/125576/1270916.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-
-        </tr>
-    </table>
-
-    <table id="historia" class="tabela-materia" border="1" style="display:none; margin-top:20px;">
-        <tr><th>História</th></tr>
-        <tr>
-            <tr><td>Aula 1 - O QUE EU FAÇO NA ESCOLA? (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/125401/1271577.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 2 - AS ESCOLAS SÃO IGUAIS? (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/125402/1271586.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 3 - CUIDANDO DA MINHA ESCOLA (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/125403/1271591.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 4 - DESCOBRINDO REGRAS PARA VIVER EM COMUNIDADE (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/126112/1271595.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 5 - REGRAS E COMBINADOS ESCOLARES (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/126118/1271603.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 6 - REGRAS DE CONVIVÊNCIA NO TRÂNSITO (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/126143/1271632.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 7 - COMBINADOS EM FAMÍLIA (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/126216/1271614.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 8 - OS DIREITOS DAS CRIANÇAS (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/126217/1271626.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-
-        </tr>
-    </table>
-
-    <table id="ingles" class="tabela-materia" border="1" style="display:none; margin-top:20px;">
-        <tr><th>Língua Inglesa</th></tr>
-        <tr>
-            <tr><td>Aula 1 - SCHOOL SUPPLIES</td><td><a href="https://acervocmsp.educacao.sp.gov.br/128861/1079925.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 2 - IS THIS YOUR PEN?</td><td><a href="https://acervocmsp.educacao.sp.gov.br/128862/1071575.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 3 - PLACES AT SCHOOL</td><td><a href="https://acervocmsp.educacao.sp.gov.br/128863/1072920.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 4 - THIS IS MY FAVORITE PLACE AT SCHOOL!</td><td><a href="https://acervocmsp.educacao.sp.gov.br/128864/1069993.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 5 - LET’S GO TO THE CAFETERIA!</td><td><a href="https://acervocmsp.educacao.sp.gov.br/128865/1072537.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 6 - LET’S EAT TOGETHER! (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/128867/1268660.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 7 - WALKING AROUND THE SCHOOL – A REVIEW (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/128869/1268669.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 8 - A DAY AT SCHOOL – A STORY</td><td><a href="https://acervocmsp.educacao.sp.gov.br/128870/1073426.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
- 
-        </tr>
-    </table>
-
-    <table id="portugues" class="tabela-materia" border="1" style="display:none; margin-top:20px;">
-        <tr><th>Língua Portuguesa</th></tr>
-        <tr>
-            <tr><td>Aula 1 - A BRUXA (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/125417/1268696.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 2 - LETRA X (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/125419/1268700.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 3 - O QUE SERÁ? (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/125420/1268706.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 4 - Os DEZ CÃES AMIGOS (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/125422/1268717.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 5 - ADIVINHAS (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/126021/1268720.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 6 - LETRA C (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/126022/1268725.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 7 - SETE CASAS (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/126023/1268728.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 8 - MAIS LETRA C (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/126024/1268733.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 9 - CORRE CUTIA (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/126418/1268740.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 10 - CEGONHAS (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/126419/1268744.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 11 - XEPA E A FEIRA (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/126420/1268749.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 12 - XEXÉU (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/126421/1284592.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 13 - VIDA DA COLMÉIA (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/126987/1284595.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 14 - ZUM-ZUM-ZUM NA FEIRA (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/126988/1284600.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 15 - VERBETE DIFERENTE (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/126989/1284603.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 16 - O SOLDADO (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/126990/1284607.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 17 - JEITOS MUITO MALUCOS DE FAZER TAREFAS (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/127827/1284611.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 18 - CIRANDA, CIRANDINHA (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/127828/1284619.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 19 - BOLO DE CENOURA (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/127829/1284629.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 20 - O BOLO DA TIA CECILIA (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/127830/1284632.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 21 - O GATO GAIATO (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/128590/1284638.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 22 - SORRISO COM JANELA (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/128591/1284643.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 23 - G DE GELATINA (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/128592/1284652.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 24 - Girassol (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/128593/1284658.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 25 - A letra G (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/129263/1284665.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 26 - Que bicho sou eu? (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/129265/1284669.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 27 - Ciranda (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/129267/1284673.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 28 - Guilherme, o dono do guincho (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/129268/1284676.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 29 - GUA PRA LÁ E PRA CÁ (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/129774/1284682.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 30 - A guerra (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/129775/1284690.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 31 - BRINCADEIRA DE RODA (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/129776/1288719.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 32 - PUDIM (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/129777/1288726.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 33 - O PARDAL (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/130211/1288733.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 34 - O SONHO DO L (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/130212/1288737.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 35 - NO ZOOLÓGICO É PROIBIDO (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/130213/1288745.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 36 - INFÂNCIA (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/130214/1288750.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 37 - HIPÓLITO (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/130600/1288753.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 38 - A LETRA K (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/130601/1288762.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 39 - A letra W (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/130602/1288765.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 40 - A letra Y (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/130603/1288770.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-
-        </tr>
-    </table>
-
-    <table id="matematica" class="tabela-materia" border="1" style="display:none; margin-top:20px;">
-        <tr><th>Matemática</th></tr>
-        <tr>
-            <tr><td>Aula 1 - FIGURAS GEOMÉTRICAS PLANAS I (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/127504/1273113.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 2 - FIGURAS GEOMÉTRICAS PLANAS II (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/127505/1273119.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 3 - CALENDÁRIO (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/127506/1273125.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 4 - ESTIMANDO MEDIDAS (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/127507/1273131.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 5 - NÚMEROS NATURAIS I (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/127713/1273135.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 6 - NÚMEROS NATURAIS II (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/127714/1273139.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 7 - COMPONDO E DECOMPONDO NÚMEROS (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/127715/1273144.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 8 - ADIÇÃO (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/127716/1273149.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 9 - SITUAÇÕES-PROBLEMA: ADIÇÃO E SUBTRAÇÃO I (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/128598/1273155.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 10 - SITUAÇÕES-PROBLEMA: ADIÇÃO E SUBTRAÇÃO II (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/128599/1273159.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 11 - SITUAÇÕES-PROBLEMA: ADIÇÃO E SUBTRAÇÃO III (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/128601/1273162.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 12 - TABELAS E GRÁFICOS (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/128602/1273169.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 13 - FIGURAS GEOMÉTRICAS PLANAS I (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/129234/1273174.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 14 - FIGURAS GEOMÉTRICAS PLANAS II (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/129235/1273178.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 15 - COMPARANDO MEDIDAS (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/129236/1273184.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 16 - SISTEMA MONETÁRIO BRASILEIRO I (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/129237/1273188.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 17 - SISTEMA MONETÁRIO BRASILEIRO II (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/129789/1273192.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 18 - NÚMEROS NATURAIS (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/129790/1273198.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 19 - SITUAÇÕES-PROBLEMA: ADIÇÃO (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/129791/1273203.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 20 - SITUAÇÕES-PROBLEMA: SUBTRAÇÃO (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/129792/1273209.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 21 - SITUAÇÕES-PROBLEMA: ADIÇÃO E SUBTRAÇÃO I (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/130147/1273212.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 22 - SITUAÇÕES-PROBLEMA: ADIÇÃO E SUBTRAÇÃO II (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/130150/1273215.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 23 - SEQUÊNCIA NUMÉRICA (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/130156/1273220.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 24 - PROBABILIDADE E LEITURA DE TABELAS E GRÁFICOS (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/130157/1273225.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 25 - COMPARANDO NÚMEROS NATURAIS (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/130635/1273236.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 26 - COMPONDO E DECOMPONDO NÚMEROS NATURAIS (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/130636/1273243.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 27 - CALENDÁRIO (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/130637/1273248.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 28 - TABELAS E GRÁFICOS (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/130638/1273255.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 29 - ADIÇÃO E SUBTRAÇÃO (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/131572/1273262.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 30 - COMPARANDO NÚMEROS (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/131573/1273266.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 31 - MULTIPLICAÇÃO E ADIÇÃO DE PARCELAS IGUAIS (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/131574/1273269.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
-            <tr><td>Aula 32 - VAMOS REPARTIR? (versão2)</td><td><a href="https://acervocmsp.educacao.sp.gov.br/131575/1273279.pdf" target="_blank"><img src="https://i.ibb.co/5hn1Sh5C/download-da-nuvem.png" alt="Download"></a></td></tr>
+    <!-- Ícone de Voltar ao Topo -->
+    <img id="topoBtn" src="https://i.ibb.co/zT9G8FM1/topo.png" alt="Voltar ao topo" onclick="voltarAoTopo()">  
     
-        </tr>
-    </table>
+    <br>
+    <br>
+    <br>
 
-    <table id="projeto_convivencia" class="tabela-materia" border="1" style="display:none; margin-top:20px;">
-        <tr><th>PROJETO DE CONVIVÊNCIA</th></tr>
-        <tr><td>I N D I S P O N Í V E L</td></tr>
-    </table>
-</div>
-
-</style>
+    <div class="footer-image">
+        <div class="footer-text">
+            <p>Secretaria Municipal de Educação</p>
+            <p>Rua Silva Jardim, nº 59 – CEP 14730-000</p>
+            <p>Fone/Fax: (17) 3361-1095 / 3361-1365</p>
+        </div>
+    </div>
+</body>
+</html>
